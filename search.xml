@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title></title>
-      <link href="/2024/06/06/%E7%AC%94%E8%AE%B0/"/>
-      <url>/2024/06/06/%E7%AC%94%E8%AE%B0/</url>
+      <title>demo</title>
+      <link href="/2024/06/06/demo/"/>
+      <url>/2024/06/06/demo/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="四翼飞行器"><a href="#四翼飞行器" class="headerlink" title="四翼飞行器"></a>四翼飞行器</h1><h3 id="在根据数据手册画封装时，需要对原尺寸进行补偿，否则可能会导致虚焊。"><a href="#在根据数据手册画封装时，需要对原尺寸进行补偿，否则可能会导致虚焊。" class="headerlink" title="在根据数据手册画封装时，需要对原尺寸进行补偿，否则可能会导致虚焊。"></a>在根据数据手册画封装时，需要对原尺寸进行补偿，否则可能会导致虚焊。</h3><p>将焊盘的长度稍微增加即可，注意丝印不要打在焊盘上，所以需要将丝印打断。edit-slice..</p><h3 id="检查封装"><a href="#检查封装" class="headerlink" title="检查封装"></a>检查封装</h3><p>1 是否居中（快捷键efc）</p><p>2 丝印是否位于其他层以及是否覆盖焊盘</p><p>3 注意1∠标识</p><p>4 没必要的丝印删除</p><h3 id="板框导入"><a href="#板框导入" class="headerlink" title="板框导入"></a>板框导入</h3><p>导入cad文件，file–import–DXF&#x2F;DWG</p><h4 id=""><a href="#" class="headerlink" title=""></a><img src="https://github.com/Armke/Armke.github.io/blob/main/img/1.png?raw=true"></h4><h3 id="import-as-components-表示以器件导入"><a href="#import-as-components-表示以器件导入" class="headerlink" title="import as components 表示以器件导入"></a>import as components 表示以器件导入</h3><p>下面表示导入到层数，将所有全部倒入机械1层即可</p><p>然后再将顶视图和底视图分别改到机械2层</p><h3 id="定义板框"><a href="#定义板框" class="headerlink" title="定义板框"></a>定义板框</h3><p>将板框放置到机械一层</p><p>design–board shape–Define from selected objects</p><p>重新定义板框形状</p><h3 id="结构器件精准定位"><a href="#结构器件精准定位" class="headerlink" title="结构器件精准定位"></a>结构器件精准定位</h3><h4 id="丝印放中心-A-position-Component-Text"><a href="#丝印放中心-A-position-Component-Text" class="headerlink" title="丝印放中心 A-position Component Text"></a>丝印放中心 A-position Component Text</h4><h4 id="角度旋转自定义角度-TP-，给空格旋转改为1°，-这样通过不断修改空格就可以达到我们想要的角度"><a href="#角度旋转自定义角度-TP-，给空格旋转改为1°，-这样通过不断修改空格就可以达到我们想要的角度" class="headerlink" title="角度旋转自定义角度 TP ，给空格旋转改为1°， 这样通过不断修改空格就可以达到我们想要的角度"></a>角度旋转自定义角度 TP ，给空格旋转改为1°， 这样通过不断修改空格就可以达到我们想要的角度</h4><p>固定器件放置之后记得锁定</p><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
       
       
       
@@ -17,19 +17,13 @@
     
     
     <entry>
-      <title>2fsk</title>
-      <link href="/2023/02/12/2fsk/"/>
-      <url>/2023/02/12/2fsk/</url>
+      <title></title>
+      <link href="/2024/06/06/%E7%AC%94%E8%AE%B0/"/>
+      <url>/2024/06/06/%E7%AC%94%E8%AE%B0/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h6 id="1-数字调制："><a href="#1-数字调制：" class="headerlink" title="1.数字调制："></a>1.数字调制：</h6><p>为了使数字信号在带通信道中传输，必须用数字基带信号对载波进行调制，使信号与信道的特性相匹配。用数字基带信号控制载波，将数字基带信号转成数字带通信号的过程。</p><h6 id="2-二进制频移键控："><a href="#2-二进制频移键控：" class="headerlink" title="2.二进制频移键控："></a>2.二进制频移键控：</h6><p>是利用载波的频率变化来传递数字信息，载波频率随二进制基带信号在f1和f2两个频率点之间变化。</p><h6 id="3-公式："><a href="#3-公式：" class="headerlink" title="3.公式："></a>3.公式：</h6><p><img src="https://github.com/Armke/Armke.github.io/blob/main/img/2.png?raw=true"></p><h6 id="4-典型波形："><a href="#4-典型波形：" class="headerlink" title="4.典型波形："></a>4.典型波形：</h6><p><img src="https://github.com/Armke/Armke.github.io/blob/main/img/3.png?raw=true"></p><p>典型波形如图7-7所示。由图可见,2FSK信号的波形( a)可以分解为波形(b)和波形(c),也就是说,一个2FSK信号可以看成是两个不同载频的2ASK信号的叠加。因此,2FSK信号的时域表达式又可写成：</p><p><img src="https://github.com/Armke/Armke.github.io/blob/main/img/4.png?raw=true"></p><h6 id="5-产生方式以及解调："><a href="#5-产生方式以及解调：" class="headerlink" title="5.产生方式以及解调："></a>5.产生方式以及解调：</h6><p><img src="https://github.com/Armke/Armke.github.io/blob/main/img/5.png?raw=true"></p><p><img src="https://github.com/Armke/Armke.github.io/blob/main/img/6.png?raw=true"></p><p><img src="https://github.com/Armke/Armke.github.io/blob/main/img/7.png?raw=true"></p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>title: PCB<br>date: 2024-06-06 20:16:05<br>tags:PCB</p><h3 id="在根据数据手册画封装时，需要对原尺寸进行补偿，否则可能会导致虚焊。"><a href="#在根据数据手册画封装时，需要对原尺寸进行补偿，否则可能会导致虚焊。" class="headerlink" title="在根据数据手册画封装时，需要对原尺寸进行补偿，否则可能会导致虚焊。"></a>在根据数据手册画封装时，需要对原尺寸进行补偿，否则可能会导致虚焊。</h3><p>将焊盘的长度稍微增加即可，注意丝印不要打在焊盘上，所以需要将丝印打断。edit-slice..</p><h3 id="检查封装"><a href="#检查封装" class="headerlink" title="检查封装"></a>检查封装</h3><p>1 是否居中（快捷键efc）</p><p>2 丝印是否位于其他层以及是否覆盖焊盘</p><p>3 注意1∠标识</p><p>4 没必要的丝印删除</p><h3 id="板框导入"><a href="#板框导入" class="headerlink" title="板框导入"></a>板框导入</h3><p>导入cad文件，file–import–DXF&#x2F;DWG</p><h4 id=""><a href="#" class="headerlink" title=""></a><img src="https://github.com/Armke/Armke.github.io/blob/main/img/1.png?raw=true"></h4><h3 id="import-as-components-表示以器件导入"><a href="#import-as-components-表示以器件导入" class="headerlink" title="import as components 表示以器件导入"></a>import as components 表示以器件导入</h3><p>下面表示导入到层数，将所有全部倒入机械1层即可</p><p>然后再将顶视图和底视图分别改到机械2层</p><h3 id="定义板框"><a href="#定义板框" class="headerlink" title="定义板框"></a>定义板框</h3><p>将板框放置到机械一层</p><p>design–board shape–Define from selected objects</p><p>重新定义板框形状</p><h3 id="结构器件精准定位"><a href="#结构器件精准定位" class="headerlink" title="结构器件精准定位"></a>结构器件精准定位</h3><h4 id="丝印放中心-A-position-Component-Text"><a href="#丝印放中心-A-position-Component-Text" class="headerlink" title="丝印放中心 A-position Component Text"></a>丝印放中心 A-position Component Text</h4><h4 id="角度旋转自定义角度-TP-，给空格旋转改为1°，-这样通过不断修改空格就可以达到我们想要的角度"><a href="#角度旋转自定义角度-TP-，给空格旋转改为1°，-这样通过不断修改空格就可以达到我们想要的角度" class="headerlink" title="角度旋转自定义角度 TP ，给空格旋转改为1°， 这样通过不断修改空格就可以达到我们想要的角度"></a>角度旋转自定义角度 TP ，给空格旋转改为1°， 这样通过不断修改空格就可以达到我们想要的角度</h4><p>固定器件放置之后记得锁定</p><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3>]]></content>
       
       
-      
-        <tags>
-            
-            <tag> 2fsk </tag>
-            
-        </tags>
       
     </entry>
     
