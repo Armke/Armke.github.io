@@ -4,13 +4,19 @@
   
     
     <entry>
-      <title></title>
+      <title>PCB</title>
       <link href="/2024/06/06/%E7%AC%94%E8%AE%B0/"/>
       <url>/2024/06/06/%E7%AC%94%E8%AE%B0/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>title: PCB<br>date: 2024-06-06 20:16:05<br>tags:PCB</p><h3 id="在根据数据手册画封装时，需要对原尺寸进行补偿，否则可能会导致虚焊。"><a href="#在根据数据手册画封装时，需要对原尺寸进行补偿，否则可能会导致虚焊。" class="headerlink" title="在根据数据手册画封装时，需要对原尺寸进行补偿，否则可能会导致虚焊。"></a>在根据数据手册画封装时，需要对原尺寸进行补偿，否则可能会导致虚焊。</h3><p>将焊盘的长度稍微增加即可，注意丝印不要打在焊盘上，所以需要将丝印打断。edit-slice..</p><h3 id="检查封装"><a href="#检查封装" class="headerlink" title="检查封装"></a>检查封装</h3><p>1 是否居中（快捷键efc）</p><p>2 丝印是否位于其他层以及是否覆盖焊盘</p><p>3 注意1∠标识</p><p>4 没必要的丝印删除</p><h3 id="板框导入"><a href="#板框导入" class="headerlink" title="板框导入"></a>板框导入</h3><p>导入cad文件，file–import–DXF&#x2F;DWG</p><h4 id=""><a href="#" class="headerlink" title=""></a><img src="https://github.com/Armke/Armke.github.io/blob/main/img/1.png?raw=true"></h4><h3 id="import-as-components-表示以器件导入"><a href="#import-as-components-表示以器件导入" class="headerlink" title="import as components 表示以器件导入"></a>import as components 表示以器件导入</h3><p>下面表示导入到层数，将所有全部倒入机械1层即可</p><p>然后再将顶视图和底视图分别改到机械2层</p><h3 id="定义板框"><a href="#定义板框" class="headerlink" title="定义板框"></a>定义板框</h3><p>将板框放置到机械一层</p><p>design–board shape–Define from selected objects</p><p>重新定义板框形状</p><h3 id="结构器件精准定位"><a href="#结构器件精准定位" class="headerlink" title="结构器件精准定位"></a>结构器件精准定位</h3><h4 id="丝印放中心-A-position-Component-Text"><a href="#丝印放中心-A-position-Component-Text" class="headerlink" title="丝印放中心 A-position Component Text"></a>丝印放中心 A-position Component Text</h4><h4 id="角度旋转自定义角度-TP-，给空格旋转改为1°，-这样通过不断修改空格就可以达到我们想要的角度"><a href="#角度旋转自定义角度-TP-，给空格旋转改为1°，-这样通过不断修改空格就可以达到我们想要的角度" class="headerlink" title="角度旋转自定义角度 TP ，给空格旋转改为1°， 这样通过不断修改空格就可以达到我们想要的角度"></a>角度旋转自定义角度 TP ，给空格旋转改为1°， 这样通过不断修改空格就可以达到我们想要的角度</h4><p>固定器件放置之后记得锁定</p><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="在根据数据手册画封装时，需要对原尺寸进行补偿，否则可能会导致虚焊。"><a href="#在根据数据手册画封装时，需要对原尺寸进行补偿，否则可能会导致虚焊。" class="headerlink" title="在根据数据手册画封装时，需要对原尺寸进行补偿，否则可能会导致虚焊。"></a>在根据数据手册画封装时，需要对原尺寸进行补偿，否则可能会导致虚焊。</h3><p>将焊盘的长度稍微增加即可，注意丝印不要打在焊盘上，所以需要将丝印打断。edit-slice..</p><h3 id="检查封装"><a href="#检查封装" class="headerlink" title="检查封装"></a>检查封装</h3><p>1 是否居中（快捷键efc）</p><p>2 丝印是否位于其他层以及是否覆盖焊盘</p><p>3 注意1∠标识</p><p>4 没必要的丝印删除</p><h3 id="板框导入"><a href="#板框导入" class="headerlink" title="板框导入"></a>板框导入</h3><p>导入cad文件，file–import–DXF&#x2F;DWG</p><h4 id=""><a href="#" class="headerlink" title=""></a><img src="https://github.com/Armke/Armke.github.io/blob/main/img/1.png?raw=true"></h4><h3 id="import-as-components-表示以器件导入"><a href="#import-as-components-表示以器件导入" class="headerlink" title="import as components 表示以器件导入"></a>import as components 表示以器件导入</h3><p>下面表示导入到层数，将所有全部倒入机械1层即可</p><p>然后再将顶视图和底视图分别改到机械2层</p><h3 id="定义板框"><a href="#定义板框" class="headerlink" title="定义板框"></a>定义板框</h3><p>将板框放置到机械一层</p><p>design–board shape–Define from selected objects</p><p>重新定义板框形状</p><h3 id="结构器件精准定位"><a href="#结构器件精准定位" class="headerlink" title="结构器件精准定位"></a>结构器件精准定位</h3><h4 id="丝印放中心-A-position-Component-Text"><a href="#丝印放中心-A-position-Component-Text" class="headerlink" title="丝印放中心 A-position Component Text"></a>丝印放中心 A-position Component Text</h4><h4 id="角度旋转自定义角度-TP-，给空格旋转改为1°，-这样通过不断修改空格就可以达到我们想要的角度"><a href="#角度旋转自定义角度-TP-，给空格旋转改为1°，-这样通过不断修改空格就可以达到我们想要的角度" class="headerlink" title="角度旋转自定义角度 TP ，给空格旋转改为1°， 这样通过不断修改空格就可以达到我们想要的角度"></a>角度旋转自定义角度 TP ，给空格旋转改为1°， 这样通过不断修改空格就可以达到我们想要的角度</h4><p>固定器件放置之后记得锁定</p><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> PCB </tag>
+            
+        </tags>
       
     </entry>
     
