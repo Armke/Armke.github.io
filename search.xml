@@ -4,11 +4,24 @@
   
     
     <entry>
+      <title>模集</title>
+      <link href="/2024/06/21/%E6%A8%A1%E9%9B%86/"/>
+      <url>/2024/06/21/%E6%A8%A1%E9%9B%86/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h5 id="6-22"><a href="#6-22" class="headerlink" title="6.22"></a>6.22</h5><h1 id="MOSFET结构"><a href="#MOSFET结构" class="headerlink" title="MOSFET结构"></a>MOSFET结构</h1><p>NMOS结构：</p><p>衬底为P型，重参杂n区形成源级和漏级，重参杂的多晶硅为栅极，有一层SiO2使得栅极和衬底隔离，此为增强型nmos，源极和漏极是对称的。</p><p>源级提供载流子，漏级收集载流子</p><p>NMOS的衬底必须接系统最低电压</p><p><img src="https://github.com/Armke/Armke.github.io/blob/main/img/modian/mos%E5%99%A8%E4%BB%B6%E7%BB%93%E6%9E%84.png?raw=true"></p><h3 id="MOS符号："><a href="#MOS符号：" class="headerlink" title="MOS符号："></a>MOS符号：</h3><p><img src="https://github.com/Armke/Armke.github.io/blob/main/img/modian/mos%E7%AC%A6%E5%8F%B7.png?raw=true"></p><h5 id="6-23"><a href="#6-23" class="headerlink" title="6.23"></a>6.23</h5><h3 id="I-V特性"><a href="#I-V特性" class="headerlink" title="I-V特性"></a>I-V特性</h3><p><img src="https://github.com/Armke/Armke.github.io/blob/main/img/modian/IV%E5%85%AC%E5%BC%8F.png?raw=true"></p><p> Id漏源电流，μn载流子迁移率，CW表示单位长度的总电容，W栅宽，L是栅长</p><p><img src="https://github.com/Armke/Armke.github.io/blob/main/img/modian/%E5%85%B3%E7%B3%BB.png?raw=true"></p><p>工作在阴影部分，也就是三极管区的时候才成立</p><p>当mos管沟道预夹断时，mos管进入饱和区（active），此时电流Id不随着这个Vds增大而改变，趋于稳定。</p><p><img src="https://github.com/Armke/Armke.github.io/blob/main/img/modian/%E9%A5%B1%E5%92%8C%E5%85%AC%E5%BC%8F.png?raw=true"></p><p>过驱动电压Vov</p><p><img src="https://github.com/Armke/Armke.github.io/blob/main/img/modian/Vov.png?raw=true"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>模电</title>
       <link href="/2024/06/21/%E6%A8%A1%E7%94%B5/"/>
       <url>/2024/06/21/%E6%A8%A1%E7%94%B5/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="二极管"><a href="#二极管" class="headerlink" title="二极管"></a>二极管</h1><p>单向导电性</p><h4 id="伏安特性："><a href="#伏安特性：" class="headerlink" title="伏安特性："></a>伏安特性：</h4><p><img src="https://github.com/Armke/Armke.github.io/blob/main/img/modian/%E4%BA%8C%E6%9E%81%E7%AE%A1%E4%BC%8F%E5%AE%89%E7%89%B9%E6%80%A7.png?raw=true"></p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="二极管"><a href="#二极管" class="headerlink" title="二极管"></a>二极管</h1><p>单向导电性</p><h4 id="伏安特性："><a href="#伏安特性：" class="headerlink" title="伏安特性："></a>伏安特性：</h4><p><img src="https://github.com/Armke/Armke.github.io/blob/main/img/modian/%E4%BA%8C%E6%9E%81%E7%AE%A1%E4%BC%8F%E5%AE%89%E7%89%B9%E6%80%A7.png?raw=true"></p><p>影响因素：温度</p><p>有一个最大工作频率，超过了就没有单向导电性</p><h4 id="稳压二极管："><a href="#稳压二极管：" class="headerlink" title="稳压二极管："></a>稳压二极管：</h4><p><img src="https://github.com/Armke/Armke.github.io/blob/main/img/modian/%E7%A8%B3%E5%8E%8B%E4%BA%8C%E6%9E%81%E7%AE%A1.png?raw=true"></p><p>工作在反向击穿状态，击穿之后电压变化小，有一个最大电流要求（额定功率）</p><h4 id="bjt共射："><a href="#bjt共射：" class="headerlink" title="bjt共射："></a>bjt共射：</h4><p>1，发射结加正向电压，扩散运动形成发射极电流Ie</p><p>2，扩散到基区的自由电子与空穴复合形成基级电流Ib</p><p>3，集电极加反向电压，漂移运动形成集电极电流Ic</p><p>Ie&#x3D;Ic+Ib</p><h4 id="共射放大倍数B："><a href="#共射放大倍数B：" class="headerlink" title="共射放大倍数B："></a>共射放大倍数B：</h4><p>B&#x3D;ic&#x2F;ib</p><p>直流放大系数</p><h1 id="FET（场效应管）"><a href="#FET（场效应管）" class="headerlink" title="FET（场效应管）"></a>FET（场效应管）</h1><p><img src="https://github.com/Armke/Armke.github.io/blob/main/img/modian/FET.png?raw=true"></p><p>g栅极      d漏级     s源级</p><p>dgs类比cbe</p><p>在Ugs之间加上反向电压，Uds加上正向电压</p>]]></content>
       
       
       
