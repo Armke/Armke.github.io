@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.com/Armke/picture/blob/main/applenext.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://github.com/Armke/picture/blob/main/madum.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://github.com/Armke/picture/blob/main/small.png">
+  <link rel="mask-icon" href="https://github.com/Armke/picture/blob/main/favicon.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"armke.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="在阅读论文中所学习的知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="随记">
+<meta property="og:url" content="https://armke.github.io/2024/09/03/%E9%9A%8F%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Armke的笔记">
+<meta property="og:description" content="在阅读论文中所学习的知识">
+<meta property="og:locale">
+<meta property="og:image" content="https://github.com/Armke/Armke.github.io/blob/master/img/%E6%9C%89%E6%BA%90%E5%99%A8%E4%BB%B6%E5%BB%BA%E6%A8%A1.png?raw=true">
+<meta property="og:image" content="https://github.com/Armke/Armke.github.io/blob/master/img/FET%E5%B0%8F%E4%BF%A1%E5%8F%B7%E7%AD%89%E6%95%88%E6%A8%A1%E5%9E%8B.png?raw=true">
+<meta property="og:image" content="https://github.com/Armke/Armke.github.io/blob/master/img/%E4%B8%89%E7%BB%B4%E5%9B%BE.png?raw=true">
+<meta property="article:published_time" content="2024-09-03T08:00:01.000Z">
+<meta property="article:modified_time" content="2024-09-05T13:32:36.684Z">
+<meta property="article:author" content="Armke">
+<meta property="article:tag" content="随机">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/Armke/Armke.github.io/blob/master/img/%E6%9C%89%E6%BA%90%E5%99%A8%E4%BB%B6%E5%BB%BA%E6%A8%A1.png?raw=true">
+
+<link rel="canonical" href="https://armke.github.io/2024/09/03/%E9%9A%8F%E8%AE%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>随记 | Armke的笔记</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Armke的笔记</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://armke.github.io/2024/09/03/%E9%9A%8F%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://github.com/Armke/picture/blob/main/head.jpg">
+      <meta itemprop="name" content="Armke">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Armke的笔记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          随记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-09-03 16:00:01" itemprop="dateCreated datePublished" datetime="2024-09-03T16:00:01+08:00">2024-09-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-09-05 21:32:36" itemprop="dateModified" datetime="2024-09-05T21:32:36+08:00">2024-09-05</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>6.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>24 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>在阅读论文中所学习的知识<br><span id="more"></span></p>
+<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><h2 id="记忆效应"><a href="#记忆效应" class="headerlink" title="记忆效应"></a>记忆效应</h2><p>在射频功率放大器（PA）领域，<strong>记忆效应</strong>（Memory Effect）是指放大器的输出信号不仅仅取决于当前的输入信号，还受之前输入信号的影响。这种现象导致放大器的性能不再仅仅是瞬时的，而是与输入信号的历史相关。</p>
+<h3 id="记忆效应的影响"><a href="#记忆效应的影响" class="headerlink" title="记忆效应的影响"></a>记忆效应的影响</h3><ol>
+<li><strong>非线性失真</strong>：记忆效应会导致放大器输出信号中的非线性失真增加，尤其是在宽带信号或多载波信号的处理过程中。这种失真会影响通信系统的信号质量和传输效率。</li>
+<li><strong>交调失真</strong>：记忆效应会引起不同信号之间的交调失真，特别是在多载波情况下。交调失真会导致频谱旁瓣增大，影响系统的频谱效率。</li>
+<li><strong>动态偏移</strong>：由于记忆效应的存在，PA的增益和相位特性会随着时间发生变化，这会导致放大器输出信号出现动态偏移，影响系统的稳定性和性能。</li>
+</ol>
+<h3 id="记忆效应的原因"><a href="#记忆效应的原因" class="headerlink" title="记忆效应的原因"></a>记忆效应的原因</h3><p>记忆效应通常来源于以下几个方面：</p>
+<ol>
+<li><strong>电热效应</strong>：放大器的器件在工作过程中会产生热量，这些热量会影响器件的特性，如增益和相位，导致记忆效应的产生。热量的累积和散热的延迟会使得器件特性与时间相关。</li>
+<li><strong>电路寄生效应</strong>：放大器电路中的寄生电感、电容和电阻会引入时间常数，这些寄生元件会导致电路对输入信号的响应带有滞后效应，形成记忆效应。</li>
+<li><strong>电荷捕获效应</strong>：在某些半导体材料中，电荷捕获与释放的过程也会导致记忆效应。这种效应通常在较高频率或高功率下更加明显。</li>
+</ol>
+<h3 id="记忆效应的补偿"><a href="#记忆效应的补偿" class="headerlink" title="记忆效应的补偿"></a>记忆效应的补偿</h3><p>为了减小记忆效应的影响，通常会采用数字预失真（Digital Predistortion, DPD）技术来补偿放大器的非线性和记忆效应。DPD技术通过对输入信号进行预处理，使其在通过放大器后能够抵消放大器引入的失真，从而提高系统的线性度和信号质量。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>记忆效应是射频功率放大器中一种重要的非线性现象，会对系统的性能产生负面影响。理解和补偿记忆效应是设计高性能射频放大器的关键之一。</p>
+<hr>
+<h2 id="PA"><a href="#PA" class="headerlink" title="PA"></a>PA</h2><p>在射频电路中，<strong>PA</strong> 是 <strong>Power Amplifier</strong>（功率放大器）的缩写。功率放大器是一种用于增加射频信号功率的电路元件或模块，主要用于无线通信系统的发射端。其作用是将来自前级（如射频信号源或前置放大器）的低功率信号放大到足够高的功率水平，以便通过天线有效地传输信号。</p>
+<h3 id="PA-的主要功能"><a href="#PA-的主要功能" class="headerlink" title="PA 的主要功能"></a>PA 的主要功能</h3><ol>
+<li><strong>功率提升</strong>：PA 的主要作用是提高信号的功率，使信号能够克服传播路径上的损耗，达到接收端时仍然具有足够的信号强度。</li>
+<li><strong>效率</strong>：PA 的效率直接影响到设备的功耗和发热量，尤其在电池供电的设备中（如手机），PA 的效率至关重要。</li>
+<li><strong>线性度</strong>：线性度指的是PA在不同输入功率条件下保持输出信号波形与输入信号波形的相似程度。高线性度的PA能够减少信号失真，保证通信质量。</li>
+</ol>
+<h3 id="PA-在无线通信中的应用"><a href="#PA-在无线通信中的应用" class="headerlink" title="PA 在无线通信中的应用"></a>PA 在无线通信中的应用</h3><p>PA 广泛应用于各种无线通信系统中，如移动通信基站、无线局域网（Wi-Fi）、蓝牙设备、卫星通信等。不同应用中对 PA 的要求有所不同，如工作频率、输出功率、线性度、效率等。</p>
+<h3 id="PA-的类型"><a href="#PA-的类型" class="headerlink" title="PA 的类型"></a>PA 的类型</h3><p>根据工作模式和应用场景，PA 可以分为多种类型，如：</p>
+<ul>
+<li><strong>线性功率放大器</strong>：如A类、AB类，主要用于要求高线性度的应用。</li>
+<li><strong>高效功率放大器</strong>：如D类、E类、F类，主要用于对效率要求较高的应用场景。</li>
+<li><strong>Doherty功率放大器</strong>：一种专门用于提高效率的架构，尤其在无线基站中广泛应用。</li>
+</ul>
+<p>PA 是射频电路中的关键组件，其性能直接影响整个系统的信号质量、传输范围和能效。</p>
+<hr>
+<h2 id="交调失真"><a href="#交调失真" class="headerlink" title="交调失真"></a>交调失真</h2><p><strong>交调失真</strong>（Intermodulation Distortion，IMD）是一种非线性失真现象，发生在射频功率放大器或其他非线性设备中。当两个或多个不同频率的信号同时通过一个非线性元件（如放大器）时，这些信号会相互作用，产生新的频率分量。这些新频率分量通常是原始信号频率的和、差或倍频，这就是交调失真。</p>
+<h3 id="交调失真的类型"><a href="#交调失真的类型" class="headerlink" title="交调失真的类型"></a>交调失真的类型</h3><ol>
+<li><strong>三阶交调失真（IM3）</strong>：这是最常见的一种交调失真形式，也是设计射频功率放大器时最为关注的类型。当两个频率为f1和f2 的 信号同时输入放大器时，三阶交调失真产生的频率分量为  $ 2f1−f2 $ 和  $ 2f2−f1 $  。这些分量通常出现在原始信号频率的附近，容易干扰实际的通信信号。</li>
+<li><strong>五阶交调失真（IM5）</strong>：五阶交调失真产生的频率分量为 $ 3f1−2f2 $ 和 $ 3f2−2f1 $，这些分量也会对信号造成干扰，但影响通常小于三阶交调失真。</li>
+</ol>
+<h3 id="交调失真的影响"><a href="#交调失真的影响" class="headerlink" title="交调失真的影响"></a>交调失真的影响</h3><ul>
+<li><strong>频谱污染</strong>：交调失真会产生新的频率分量，这些分量可能落在相邻的信道中，导致频谱污染，干扰邻近的通信信号。</li>
+<li><strong>信号质量下降</strong>：交调失真引入的频率分量会混入原始信号中，导致接收端的信号质量下降，使得误码率增加，通信可靠性降低。</li>
+<li><strong>降低系统容量</strong>：在多载波系统中，如蜂窝通信系统，交调失真会导致不同载波之间的干扰，降低系统的整体容量和性能。</li>
+</ul>
+<h3 id="交调失真的测量"><a href="#交调失真的测量" class="headerlink" title="交调失真的测量"></a>交调失真的测量</h3><p>交调失真通常通过在设备输入两个或多个正弦波信号，然后在输出端分析其频谱来测量。三阶交调失真（IM3）的强度通常用来衡量放大器的线性度，表现为信号输出频谱中的附加分量的大小。</p>
+<h3 id="交调失真的抑制方法"><a href="#交调失真的抑制方法" class="headerlink" title="交调失真的抑制方法"></a>交调失真的抑制方法</h3><ol>
+<li><strong>线性化技术</strong>：通过使用预失真（Predistortion）或反馈（Feedback）等技术，可以提高放大器的线性度，从而减少交调失真。</li>
+<li><strong>选择合适的工作点</strong>：通过调整放大器的偏置点，可以在一定程度上减少交调失真。</li>
+<li><strong>使用滤波器</strong>：在放大器的输出端使用滤波器可以滤除交调失真产生的频率分量，减少对系统的影响。</li>
+</ol>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>交调失真是射频功率放大器和其他非线性设备中常见的失真现象，会对通信系统的性能产生显著的负面影响。通过提高设备的线性度和采取适当的设计措施，可以有效减少交调失真对系统的影响。</p>
+<hr>
+<h2 id="禁带宽度"><a href="#禁带宽度" class="headerlink" title="禁带宽度"></a>禁带宽度</h2><p><strong>禁带宽度</strong>（Band Gap），也称为带隙，是半导体物理学中的一个重要概念。它指的是半导体或绝缘体中，电子能量带结构中的导带（Conduction Band）和价带（Valence Band）之间的能量差。这个能量差以电子伏特（eV）为单位表示。</p>
+<h3 id="禁带宽度的物理意义"><a href="#禁带宽度的物理意义" class="headerlink" title="禁带宽度的物理意义"></a>禁带宽度的物理意义</h3><ul>
+<li><strong>导带和价带</strong>：在固体材料中，电子只能占据某些特定的能量范围，这些能量范围形成能带。价带是电子在材料中能够占据的最高能量带，而导带则是电子能跃迁到的更高能量带。</li>
+<li><strong>禁带宽度</strong>：在价带的顶部和导带的底部之间存在一个能量差，这就是禁带宽度。在这个范围内，电子不允许存在，因此称为“禁带”。只有当电子获得足够的能量跃过这个能量差时，它们才能从价带跃迁到导带，从而参与导电过程。</li>
+</ul>
+<h3 id="半导体与禁带宽度"><a href="#半导体与禁带宽度" class="headerlink" title="半导体与禁带宽度"></a>半导体与禁带宽度</h3><p>禁带宽度是半导体材料的重要特性之一，决定了材料的电子特性。例如：</p>
+<ul>
+<li><strong>半导体</strong>：具有适中的禁带宽度（通常在0.5到3 eV之间）。在室温下，少量电子能够获得热能并跃迁到导带，从而使半导体具有一定的导电性。硅的禁带宽度为约1.1 eV，砷化镓的禁带宽度为约1.42 eV。</li>
+<li><strong>绝缘体</strong>：具有较大的禁带宽度（通常超过5 eV）。在常温下几乎没有电子能够跃迁到导带，因此绝缘体不能导电。</li>
+<li><strong>导体</strong>：导体（如金属）没有禁带，或者禁带宽度为零，导带和价带重叠。因此，导体中有大量自由电子，可以轻松导电。</li>
+</ul>
+<h3 id="禁带宽度的影响因素"><a href="#禁带宽度的影响因素" class="headerlink" title="禁带宽度的影响因素"></a>禁带宽度的影响因素</h3><ul>
+<li><strong>材料类型</strong>：不同材料的原子结构和晶格排列决定了它们的禁带宽度。不同的化学元素和晶体结构会导致不同的能带结构。</li>
+<li><strong>温度</strong>：随着温度的升高，半导体材料的禁带宽度通常会略微减小，因为热膨胀会影响原子的相对位置和能带结构。</li>
+</ul>
+<h3 id="禁带宽度的应用"><a href="#禁带宽度的应用" class="headerlink" title="禁带宽度的应用"></a>禁带宽度的应用</h3><p>禁带宽度对许多电子器件的工作原理起着关键作用，例如：</p>
+<ul>
+<li><strong>半导体二极管和晶体管</strong>：这些器件的开关和放大功能都依赖于禁带宽度对电子的控制。</li>
+<li><strong>光电子器件</strong>：如LED和激光器，其工作原理基于电子在不同能带间的跃迁，禁带宽度决定了发光的波长（颜色）。</li>
+<li><strong>太阳能电池</strong>：禁带宽度决定了材料能够吸收的光子能量范围，从而影响太阳能电池的效率。</li>
+</ul>
+<h3 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h3><p>禁带宽度是描述材料电学性质的基本参数，特别是在半导体领域，禁带宽度决定了材料的导电性、电子迁移特性和光学特性。理解禁带宽度有助于设计和优化各种电子和光电子器件。</p>
+<h1 id="无源元器件"><a href="#无源元器件" class="headerlink" title="无源元器件"></a>无源元器件</h1><h2 id="电感"><a href="#电感" class="headerlink" title="电感"></a>电感</h2><h3 id="微带电感"><a href="#微带电感" class="headerlink" title="微带电感"></a>微带电感</h3><p>微带电感作用：阻抗匹配或者直流偏置</p>
+<p>在大功率放大器中很少使用绕圈电感，绕圈电感能实现较高的电感量，但是其线宽却很细，其能承受的电流非常有限。</p>
+<p>对于低频低功率下的匹配电路，微带绕圈电感则比较常用</p>
+<h3 id="金丝电感"><a href="#金丝电感" class="headerlink" title="金丝电感"></a>金丝电感</h3><p>对于电路中需要很小的电感，则可以使用金丝电感来替代。不仅可以作为匹配元件进行电路的阻抗匹配，也可作为连接元件使用</p>
+<h2 id="电容"><a href="#电容" class="headerlink" title="电容"></a>电容</h2><h3 id="分布式电容"><a href="#分布式电容" class="headerlink" title="分布式电容"></a>分布式电容</h3><p>电容作用是用来进行阻抗匹配或者偏置去耦以及隔离</p>
+<p>在高频大功率电路里电容有时会用扇形或者方形开路来替代，仅限于小容值电容，无法用于隔直，称为分布式电容</p>
+<h3 id="集中电容"><a href="#集中电容" class="headerlink" title="集中电容"></a>集中电容</h3><p>MIM和叉指电容 </p>
+<h2 id="电阻器"><a href="#电阻器" class="headerlink" title="电阻器"></a>电阻器</h2><p>用于提高匹配网络的稳定性。在偏置网络中电阻的作用还在于控制栅极电流，提高晶体管的稳定性，以及隔离功能，来消除射频匹配网络对偏置电路的影响。</p>
+<h1 id="等效电路模型"><a href="#等效电路模型" class="headerlink" title="等效电路模型"></a>等效电路模型</h1><p><img src="https://github.com/Armke/Armke.github.io/blob/master/img/有源器件建模.png?raw=true" alt=""></p>
+<p>建模流程主要包括：线性小信号建模和非线性大信号建模</p>
+<h2 id="小信号建模"><a href="#小信号建模" class="headerlink" title="小信号建模"></a>小信号建模</h2><p><img src="https://github.com/Armke/Armke.github.io/blob/master/img/FET小信号等效模型.png?raw=true" alt=""></p>
+<p><img src="https://github.com/Armke/Armke.github.io/blob/master/img/三维图.png?raw=true" alt=""></p>
+<h3 id="寄生元件"><a href="#寄生元件" class="headerlink" title="寄生元件"></a>寄生元件</h3><p>寄生电感：Lg  Ld  Ls 来自于栅极源级漏级连线</p>
+<p>寄生电容：Cpg Cpd 来自栅压点和漏压点的焊盘</p>
+<p>寄生电阻：Rg Rd Rs 来自源级漏级的寄生电阻以及分布式的栅极电阻</p>
+<h3 id="本征元件"><a href="#本征元件" class="headerlink" title="本征元件"></a>本征元件</h3><p>Cgd Cgs Cds Gm t Rds Ri</p>
+<p>Cgd Cgs 表示耗尽电荷分别于栅漏以及栅源电压有关</p>
+<p>Cds用来考虑源级和漏级之间的几何电容</p>
+<p>GM是跨导 </p>
+<p>t是时间常数</p>
+<p>栅极充电电阻Ri是用来提高仿真与测量值之间的匹配度</p>
+<h2 id="提取过程"><a href="#提取过程" class="headerlink" title="提取过程"></a>提取过程</h2><h3 id="直接提取法"><a href="#直接提取法" class="headerlink" title="直接提取法"></a>直接提取法</h3><p>以S参数测试系统而测量的s参数测试数据为基础，进行线性提取，先提取寄生参数，再提取本征参数</p>
+<h3 id="寄生参数提取"><a href="#寄生参数提取" class="headerlink" title="寄生参数提取"></a>寄生参数提取</h3><p>寄生电容采用Dambrine 截止条件法来提取</p>
+<hr>
+<h3 id="Dambrine-截止条件法"><a href="#Dambrine-截止条件法" class="headerlink" title="Dambrine 截止条件法"></a>Dambrine 截止条件法</h3><p>是一种用于提取高频晶体管参数（特别是 MOSFET 或 HEMT）的方法，旨在确定晶体管的截止频率fT和其他小信号模型参数。这种方法的关键在于通过分析器件的高频S参数来推导出这些特性。</p>
+<h4 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h4><p>在高频电路中，晶体管的性能通常由其小信号等效电路参数来描述，如跨导、寄生电容等。精确提取这些参数对于射频和微波电路的设计至关重要。Dambrine 提出的截止条件法通过分析晶体管的S参数，特别是通过其频率响应来推导这些重要参数。</p>
+<h4 id="Dambrine-截止条件法的基本步骤："><a href="#Dambrine-截止条件法的基本步骤：" class="headerlink" title="Dambrine 截止条件法的基本步骤："></a>Dambrine 截止条件法的基本步骤：</h4><ol>
+<li><strong>测量S参数</strong>：<ul>
+<li>通过网络分析仪（VNA）测量晶体管在不同频率下的S参数。典型情况下，测量包括S11  S12  S21  S22。</li>
+</ul>
+</li>
+<li><strong>计算截止频率</strong>：<ul>
+<li>截止频率 fTf_TfT 定义为晶体管的电流增益为 1 时的频率。这可以通过以下公式近似计算：$ f_T= \frac{g_m}{2\pi(C_{gs} +C_{gd})} $  其中，gm是跨导，Cgs和 Cgd 分别是栅源电容和栅漏电容。</li>
+</ul>
+</li>
+<li><strong>S参数拟合</strong>：<ul>
+<li>Dambrine 方法通过对高频S参数进行拟合，以提取小信号模型中的参数。首先，对  h21  参数（即 S21 的一种变换）进行分析，得到随着频率变化的增益特性曲线。然后，找出增益为1的位置，这一位置即为晶体管的截止频率 fT。</li>
+</ul>
+</li>
+<li><strong>提取小信号参数</strong>：<ul>
+<li>通过对S参数的进一步分析，可以提取出其他重要的器件参数，如跨导 gm、寄生电容 Cgs、Cgd，以及寄生电阻和电感。</li>
+</ul>
+</li>
+</ol>
+<h4 id="Dambrine-方法的优点："><a href="#Dambrine-方法的优点：" class="headerlink" title="Dambrine 方法的优点："></a>Dambrine 方法的优点：</h4><ul>
+<li><strong>高精度</strong>：该方法能够通过测量高频S参数并结合理论分析，精确地提取晶体管的截止频率 fT 和其他小信号模型参数。</li>
+<li><strong>简便性</strong>：相较于其他更复杂的提取方法，Dambrine 法通过简单的S参数拟合和计算即可获得较为准确的结果。</li>
+<li><strong>非破坏性</strong>：该方法只需要外部的S参数测量，不需要对器件进行破坏性测试或复杂的内部探测。</li>
+</ul>
+<h4 id="适用场景："><a href="#适用场景：" class="headerlink" title="适用场景："></a>适用场景：</h4><ul>
+<li>适用于高频晶体管，如 MOSFET、HEMT、JFET 等，特别是在射频和微波电路设计中，用于提取高频下的关键参数。</li>
+<li>在射频放大器、混频器等射频系统设计中，通过提取晶体管的小信号模型，设计者可以优化电路性能，如增益、线性度、带宽等。</li>
+</ul>
+<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p>Dambrine 截止条件法通过高频S参数的测量和拟合分析，提供了一种有效的方式来提取晶体管的小信号模型参数，特别是用于确定晶体管的截止频率 fTf_TfT。这对于射频IC设计具有重要的指导意义，有助于优化高频电路的性能。</p>
+<hr>
+<h3 id="Rs提取"><a href="#Rs提取" class="headerlink" title="Rs提取"></a>Rs提取</h3><p>采用Yang-Long法来提取寄生参数Rs</p>
+<hr>
+<h3 id="Yang-Long-法"><a href="#Yang-Long-法" class="headerlink" title="Yang-Long 法"></a>Yang-Long 法</h3><p>是一种用于提取射频晶体管小信号模型参数的有效方法。它由 Yang 和 Long 提出，主要应用于高频晶体管（如 MOSFET 和 HEMT）的模型参数提取，尤其是寄生电容、寄生电阻等关键参数。该方法通过分析晶体管的 S 参数，结合数学模型，提取与器件行为相关的精确参数。</p>
+<h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><p>在射频和微波电路中，晶体管的小信号模型参数对于电路设计至关重要。通常这些参数通过高频 S 参数测试来获得。由于晶体管寄生效应的影响，这些参数的准确提取非常复杂，尤其是在高频条件下，晶体管的寄生电容、寄生电阻会显著影响其性能。</p>
+<p>Yang-Long 法通过对高频 S 参数进行分布网络模型拟合，能够较为精确地提取这些小信号参数，同时解决了常规方法难以精确分离寄生电容和电阻的问题。</p>
+<h4 id="Yang-Long-法的基本步骤："><a href="#Yang-Long-法的基本步骤：" class="headerlink" title="Yang-Long 法的基本步骤："></a>Yang-Long 法的基本步骤：</h4><ol>
+<li><strong>测量 S 参数</strong>：<ul>
+<li>使用网络分析仪（VNA）对晶体管在不同频率下进行 S 参数测试，获取射频下的 S11,S21,S12,S22 参数。</li>
+</ul>
+</li>
+<li><strong>等效电路模型</strong>：<ul>
+<li>建立晶体管的小信号等效电路模型。模型通常包括：<ul>
+<li>内部跨导 gm</li>
+<li>栅源电容 Cgs</li>
+<li>栅漏电容 Cgd</li>
+<li>源漏电容 Cds</li>
+<li>以及寄生电阻、寄生电感和寄生电容等。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>数学模型拟合</strong>：<ul>
+<li>Yang-Long 法通过对测量得到的 S 参数进行数学拟合，推导出与模型对应的各个电路参数。该方法通常结合了等效电路分析和数值优化算法，通过最小化实际测量 S 参数与理论模型 S 参数之间的误差来提取各个参数。</li>
+</ul>
+</li>
+<li><strong>寄生参数的提取</strong>：<ul>
+<li>Yang-Long 法特别适用于提取寄生参数（如寄生电容、寄生电阻等），因为它可以精确分离器件内部电容和外部寄生效应的贡献。这对于高频晶体管的建模具有重要意义，尤其是在考虑到寄生效应对射频电路的影响时。</li>
+</ul>
+</li>
+<li><strong>多频段分析</strong>：<ul>
+<li>该方法还支持多频段的参数提取，即在宽频率范围内同时提取小信号模型参数，确保在更广的频率范围内模型的准确性。这对于高频电路设计（如 GHz 级别的应用）尤为重要。</li>
+</ul>
+</li>
+</ol>
+<h4 id="Yang-Long-法的优势："><a href="#Yang-Long-法的优势：" class="headerlink" title="Yang-Long 法的优势："></a>Yang-Long 法的优势：</h4><ol>
+<li><strong>精确性</strong>：相比于其他方法，Yang-Long 法能够更精确地提取寄生电容和寄生电阻等参数，尤其是在高频下，模型的准确性更高。</li>
+<li><strong>适用范围广</strong>：该方法不仅适用于低频模型参数的提取，也适用于高频射频电路，特别是 GHz 以上的频率范围。</li>
+<li><strong>非破坏性测量</strong>：Yang-Long 法依赖于 S 参数测试，属于非破坏性测试方法，不需要对器件进行物理上的改变。</li>
+<li><strong>广泛应用</strong>：该方法不仅适用于MOSFET和HEMT，也可以用于其他高频有源器件的模型参数提取，如双极型晶体管（BJT）和其他类型的场效应晶体管。</li>
+</ol>
+<h4 id="Yang-Long-法的应用："><a href="#Yang-Long-法的应用：" class="headerlink" title="Yang-Long 法的应用："></a>Yang-Long 法的应用：</h4><ul>
+<li><strong>射频电路设计</strong>：在设计射频放大器、振荡器、混频器等电路时，精确的晶体管小信号模型参数对于优化电路性能至关重要。Yang-Long 法提供了更精确的参数提取，帮助设计者优化电路的增益、线性度和频率响应。</li>
+<li><strong>高频器件表征</strong>：对于新型高频器件，Yang-Long 法可以用来表征其高频特性，并构建准确的模型以供仿真和设计使用。</li>
+<li><strong>器件研究与开发</strong>：在开发新型高频晶体管时，Yang-Long 法有助于理解器件在高频下的寄生效应及其对性能的影响，从而改进器件结构。</li>
+</ul>
+<h4 id="总结：-1"><a href="#总结：-1" class="headerlink" title="总结："></a>总结：</h4><p>Yang-Long 法是一种高效、精确的射频晶体管小信号模型参数提取方法。它通过对 S 参数进行精确的数学拟合和分析，能够准确分离寄生效应，并提取出晶体管的重要参数。这种方法在射频和微波电路的设计、优化以及器件表征中有着广泛的应用。</p>
+<hr>
+<h1 id="功率放大器设计"><a href="#功率放大器设计" class="headerlink" title="功率放大器设计"></a>功率放大器设计</h1><p>在器件结构已经选择好之后，之后就是设计匹配网络。  </p>
+<p>一个复数的源阻抗必须和一个复数的负载阻抗相匹配，同时这个匹配要帮助无源电路实现一个最小的损耗，而且这个匹配网络必须有合适的频率失配属性来补偿晶体管的功率增益频率依赖特性。</p>
+<p><strong>匹配网络的损耗包括：</strong></p>
+<p>失配损耗，它是因为实际的输入输出阻抗匹配网络并不能完全实现负载和源阻抗完全精确匹配。</p>
+<p>由组成元件本身的耗散造成的介质损耗，比如一条微带线自身的寄生电阻带来损耗。</p>
+<hr>
+<h2 id="Bode-Fano-限制法则"><a href="#Bode-Fano-限制法则" class="headerlink" title="Bode-Fano 限制法则"></a>Bode-Fano 限制法则</h2><p>是射频和微波电路设计中的一个基本理论，主要用于描述阻抗匹配的物理极限。它指出，对于具有一定带宽的无源网络，阻抗匹配的效果（即反射系数的最小化）存在一个不可避免的权衡。该法则对电路的设计和优化有重要的理论指导意义，尤其是在天线和滤波器等器件的阻抗匹配中。</p>
+<h3 id="Bode-Fano-限制法则的背景："><a href="#Bode-Fano-限制法则的背景：" class="headerlink" title="Bode-Fano 限制法则的背景："></a>Bode-Fano 限制法则的背景：</h3><p>在射频电路中，<strong>阻抗匹配</strong> 是非常重要的概念，旨在将信号的最大功率从信号源传递到负载。完美的阻抗匹配意味着输入阻抗等于源阻抗，从而最大化功率传输，并最小化反射。然而，在实际应用中，特别是对于无源网络和有限带宽的系统，阻抗匹配并非总是能完全实现。</p>
+<h3 id="Bode-Fano-法则的内容："><a href="#Bode-Fano-法则的内容：" class="headerlink" title="Bode-Fano 法则的内容："></a>Bode-Fano 法则的内容：</h3><p>Bode-Fano 限制法则定量地描述了带有无源元件的电路中，阻抗匹配在一定带宽内的最佳性能。具体来说，它给出了阻抗匹配的理论极限，特别是当负载的阻抗不是纯电阻（如负载为容性或感性元件时）。</p>
+<p>对于一个无源网络（如滤波器或匹配网络）要使得其在带宽 Δf\Delta fΔf 内对特定类型的负载（如容性负载）实现匹配</p>
+<p>其中：</p>
+<ul>
+<li>Γ(f)是频率 fff 处的反射系数。</li>
+<li>Δf 是带宽。</li>
+<li>Q 是负载的品质因数，通常与负载的阻抗特性有关。</li>
+</ul>
+<h3 id="解释："><a href="#解释：" class="headerlink" title="解释："></a>解释：</h3><ol>
+<li><strong>反射系数 Γ(f)</strong>：反射系数表示输入信号中被反射回源端的那部分。反射系数的绝对值越小，匹配效果越好，传输到负载的功率越多。</li>
+<li><strong>带宽 Δf</strong>：在设计中，匹配网络通常在一定的频率范围内有效，即带宽越大，匹配网络要处理的频率越多。</li>
+<li><strong>品质因数 Q</strong>：这是负载的一个度量，用来描述负载阻抗的频率依赖性。对于纯电阻负载，Q 很低，而对于容性或感性的负载，Q 会较高。</li>
+</ol>
+<h3 id="Bode-Fano-法则的意义："><a href="#Bode-Fano-法则的意义：" class="headerlink" title="Bode-Fano 法则的意义："></a>Bode-Fano 法则的意义：</h3><ul>
+<li><strong>带宽与匹配的权衡</strong>：Bode-Fano 法则明确指出，阻抗匹配的效果和系统的带宽存在权衡。对于高 Q 的负载（如高度容性或感性的负载），在大带宽上实现良好的阻抗匹配是非常困难的。换句话说，带宽越宽，阻抗匹配的效果越差，反射系数不可能在整个带宽内都非常小。</li>
+<li><strong>无源网络的局限性</strong>：对于无源匹配网络，Bode-Fano 法则表明，不可能在整个带宽内完全消除反射。无论匹配网络如何设计，总会有一定的反射损耗，特别是在高 Q 负载的情况下。</li>
+<li><strong>频率选择和优化设计</strong>：在设计射频电路时，设计者需要在带宽和匹配效果之间进行权衡。Bode-Fano 法则可以用来指导设计，确定在给定负载下，特定带宽内的最佳可能匹配水平。</li>
+</ul>
+<h3 id="适用场景：-1"><a href="#适用场景：-1" class="headerlink" title="适用场景："></a>适用场景：</h3><ol>
+<li><strong>天线设计</strong>：天线通常具有高 Q 值，特别是窄带天线。Bode-Fano 限制法则能够帮助设计者了解天线在宽频带中的匹配性能极限，优化其带宽和效率。</li>
+<li><strong>滤波器和匹配网络</strong>：在滤波器或阻抗匹配网络设计中，该法则帮助工程师理解在多大带宽内可以实现高效匹配，并通过适当的匹配网络设计来最大化信号传输。</li>
+<li><strong>宽带功率放大器</strong>：对于宽带功率放大器设计，Bode-Fano 法则帮助优化阻抗匹配，以便在宽频带内实现尽可能小的反射损耗和功率传输损耗。</li>
+</ol>
+<h3 id="总结：-2"><a href="#总结：-2" class="headerlink" title="总结："></a>总结：</h3><p><strong>Bode-Fano 限制法则</strong> 是阻抗匹配设计中的一个基本理论，阐明了阻抗匹配效果和带宽之间的权衡关系。对于高 Q负载，在宽带下实现完美匹配是不可能的，设计者必须在匹配效果和工作带宽之间进行折中。该法则为射频和微波电路设计提供了重要的理论基础，特别是在天线、滤波器和功率放大器等应用中。</p>
+<hr>
+<h2 id="宽带匹配限制"><a href="#宽带匹配限制" class="headerlink" title="宽带匹配限制"></a>宽带匹配限制</h2><p>在这里研究的关键点在于给出一个负载阻抗和源阻抗，设计时必须知道他们是否能够在需要的频率带宽内完成匹配。</p>
+<p>要想知道这些，可以有三种方法获得，</p>
+<p>首要的一个方法要看是否符合 Bode-Fano 限制；</p>
+<p>第二个方法是要用 Youla 级数进行展开；</p>
+<p>第三个方法是阻抗采用一个迭代过程看是否跟 Carlin 给出的一个符合。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%9A%8F%E6%9C%BA/" rel="tag"># 随机</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/08/11/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/" rel="prev" title="论文写作">
+      <i class="fa fa-chevron-left"></i> 论文写作
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/09/17/%E5%89%8D%E4%B8%A4%E5%91%A8%E6%80%BB%E7%BB%93/" rel="next" title="前两周总结">
+      前两周总结 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%B0%E5%BF%86%E6%95%88%E5%BA%94"><span class="nav-number">1.1.</span> <span class="nav-text">记忆效应</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%B0%E5%BF%86%E6%95%88%E5%BA%94%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="nav-number">1.1.1.</span> <span class="nav-text">记忆效应的影响</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%B0%E5%BF%86%E6%95%88%E5%BA%94%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="nav-number">1.1.2.</span> <span class="nav-text">记忆效应的原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%B0%E5%BF%86%E6%95%88%E5%BA%94%E7%9A%84%E8%A1%A5%E5%81%BF"><span class="nav-number">1.1.3.</span> <span class="nav-text">记忆效应的补偿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.1.4.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PA"><span class="nav-number">1.2.</span> <span class="nav-text">PA</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PA-%E7%9A%84%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD"><span class="nav-number">1.2.1.</span> <span class="nav-text">PA 的主要功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PA-%E5%9C%A8%E6%97%A0%E7%BA%BF%E9%80%9A%E4%BF%A1%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">1.2.2.</span> <span class="nav-text">PA 在无线通信中的应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PA-%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.2.3.</span> <span class="nav-text">PA 的类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%A4%E8%B0%83%E5%A4%B1%E7%9C%9F"><span class="nav-number">1.3.</span> <span class="nav-text">交调失真</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A4%E8%B0%83%E5%A4%B1%E7%9C%9F%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.3.1.</span> <span class="nav-text">交调失真的类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A4%E8%B0%83%E5%A4%B1%E7%9C%9F%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="nav-number">1.3.2.</span> <span class="nav-text">交调失真的影响</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A4%E8%B0%83%E5%A4%B1%E7%9C%9F%E7%9A%84%E6%B5%8B%E9%87%8F"><span class="nav-number">1.3.3.</span> <span class="nav-text">交调失真的测量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A4%E8%B0%83%E5%A4%B1%E7%9C%9F%E7%9A%84%E6%8A%91%E5%88%B6%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.4.</span> <span class="nav-text">交调失真的抑制方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93-1"><span class="nav-number">1.3.5.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A6%81%E5%B8%A6%E5%AE%BD%E5%BA%A6"><span class="nav-number">1.4.</span> <span class="nav-text">禁带宽度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A6%81%E5%B8%A6%E5%AE%BD%E5%BA%A6%E7%9A%84%E7%89%A9%E7%90%86%E6%84%8F%E4%B9%89"><span class="nav-number">1.4.1.</span> <span class="nav-text">禁带宽度的物理意义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%8A%E5%AF%BC%E4%BD%93%E4%B8%8E%E7%A6%81%E5%B8%A6%E5%AE%BD%E5%BA%A6"><span class="nav-number">1.4.2.</span> <span class="nav-text">半导体与禁带宽度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A6%81%E5%B8%A6%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%BD%B1%E5%93%8D%E5%9B%A0%E7%B4%A0"><span class="nav-number">1.4.3.</span> <span class="nav-text">禁带宽度的影响因素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A6%81%E5%B8%A6%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">1.4.4.</span> <span class="nav-text">禁带宽度的应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93-2"><span class="nav-number">1.4.5.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%97%A0%E6%BA%90%E5%85%83%E5%99%A8%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">无源元器件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E6%84%9F"><span class="nav-number">2.1.</span> <span class="nav-text">电感</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AE%E5%B8%A6%E7%94%B5%E6%84%9F"><span class="nav-number">2.1.1.</span> <span class="nav-text">微带电感</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%91%E4%B8%9D%E7%94%B5%E6%84%9F"><span class="nav-number">2.1.2.</span> <span class="nav-text">金丝电感</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E5%AE%B9"><span class="nav-number">2.2.</span> <span class="nav-text">电容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E7%94%B5%E5%AE%B9"><span class="nav-number">2.2.1.</span> <span class="nav-text">分布式电容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E4%B8%AD%E7%94%B5%E5%AE%B9"><span class="nav-number">2.2.2.</span> <span class="nav-text">集中电容</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E9%98%BB%E5%99%A8"><span class="nav-number">2.3.</span> <span class="nav-text">电阻器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AD%89%E6%95%88%E7%94%B5%E8%B7%AF%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">等效电路模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E4%BF%A1%E5%8F%B7%E5%BB%BA%E6%A8%A1"><span class="nav-number">3.1.</span> <span class="nav-text">小信号建模</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%84%E7%94%9F%E5%85%83%E4%BB%B6"><span class="nav-number">3.1.1.</span> <span class="nav-text">寄生元件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%BE%81%E5%85%83%E4%BB%B6"><span class="nav-number">3.1.2.</span> <span class="nav-text">本征元件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E5%8F%96%E8%BF%87%E7%A8%8B"><span class="nav-number">3.2.</span> <span class="nav-text">提取过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E6%8F%90%E5%8F%96%E6%B3%95"><span class="nav-number">3.2.1.</span> <span class="nav-text">直接提取法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%84%E7%94%9F%E5%8F%82%E6%95%B0%E6%8F%90%E5%8F%96"><span class="nav-number">3.2.2.</span> <span class="nav-text">寄生参数提取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dambrine-%E6%88%AA%E6%AD%A2%E6%9D%A1%E4%BB%B6%E6%B3%95"><span class="nav-number">3.2.3.</span> <span class="nav-text">Dambrine 截止条件法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%EF%BC%9A"><span class="nav-number">3.2.3.1.</span> <span class="nav-text">背景：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dambrine-%E6%88%AA%E6%AD%A2%E6%9D%A1%E4%BB%B6%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="nav-number">3.2.3.2.</span> <span class="nav-text">Dambrine 截止条件法的基本步骤：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dambrine-%E6%96%B9%E6%B3%95%E7%9A%84%E4%BC%98%E7%82%B9%EF%BC%9A"><span class="nav-number">3.2.3.3.</span> <span class="nav-text">Dambrine 方法的优点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF%EF%BC%9A"><span class="nav-number">3.2.3.4.</span> <span class="nav-text">适用场景：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-number">3.2.3.5.</span> <span class="nav-text">总结：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rs%E6%8F%90%E5%8F%96"><span class="nav-number">3.2.4.</span> <span class="nav-text">Rs提取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Yang-Long-%E6%B3%95"><span class="nav-number">3.2.5.</span> <span class="nav-text">Yang-Long 法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">3.2.5.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Yang-Long-%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="nav-number">3.2.5.2.</span> <span class="nav-text">Yang-Long 法的基本步骤：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Yang-Long-%E6%B3%95%E7%9A%84%E4%BC%98%E5%8A%BF%EF%BC%9A"><span class="nav-number">3.2.5.3.</span> <span class="nav-text">Yang-Long 法的优势：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Yang-Long-%E6%B3%95%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A"><span class="nav-number">3.2.5.4.</span> <span class="nav-text">Yang-Long 法的应用：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-1"><span class="nav-number">3.2.5.5.</span> <span class="nav-text">总结：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8A%9F%E7%8E%87%E6%94%BE%E5%A4%A7%E5%99%A8%E8%AE%BE%E8%AE%A1"><span class="nav-number">4.</span> <span class="nav-text">功率放大器设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Bode-Fano-%E9%99%90%E5%88%B6%E6%B3%95%E5%88%99"><span class="nav-number">4.1.</span> <span class="nav-text">Bode-Fano 限制法则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bode-Fano-%E9%99%90%E5%88%B6%E6%B3%95%E5%88%99%E7%9A%84%E8%83%8C%E6%99%AF%EF%BC%9A"><span class="nav-number">4.1.1.</span> <span class="nav-text">Bode-Fano 限制法则的背景：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bode-Fano-%E6%B3%95%E5%88%99%E7%9A%84%E5%86%85%E5%AE%B9%EF%BC%9A"><span class="nav-number">4.1.2.</span> <span class="nav-text">Bode-Fano 法则的内容：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E9%87%8A%EF%BC%9A"><span class="nav-number">4.1.3.</span> <span class="nav-text">解释：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bode-Fano-%E6%B3%95%E5%88%99%E7%9A%84%E6%84%8F%E4%B9%89%EF%BC%9A"><span class="nav-number">4.1.4.</span> <span class="nav-text">Bode-Fano 法则的意义：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF%EF%BC%9A-1"><span class="nav-number">4.1.5.</span> <span class="nav-text">适用场景：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-2"><span class="nav-number">4.1.6.</span> <span class="nav-text">总结：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%BD%E5%B8%A6%E5%8C%B9%E9%85%8D%E9%99%90%E5%88%B6"><span class="nav-number">4.2.</span> <span class="nav-text">宽带匹配限制</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Armke"
+      src="https://github.com/Armke/picture/blob/main/head.jpg">
+  <p class="site-author-name" itemprop="name">Armke</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/armke" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;armke" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://bigshuimu.github.io/" title="https:&#x2F;&#x2F;bigshuimu.github.io&#x2F;" rel="noopener" target="_blank">armke</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Armke</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">19k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:11</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
