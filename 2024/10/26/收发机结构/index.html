@@ -20,20 +20,22 @@
     var CONFIG = {"hostname":"armke.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="3-7周">
+  <meta name="description" content="收发机结构主要部分是接收机的内容">
 <meta property="og:type" content="article">
-<meta property="og:title" content="3-7周">
-<meta property="og:url" content="https://armke.github.io/2024/10/13/3-7%E5%91%A8/index.html">
+<meta property="og:title" content="收发机结构">
+<meta property="og:url" content="https://armke.github.io/2024/10/26/%E6%94%B6%E5%8F%91%E6%9C%BA%E7%BB%93%E6%9E%84/index.html">
 <meta property="og:site_name" content="Armke的博客">
-<meta property="og:description" content="3-7周">
+<meta property="og:description" content="收发机结构主要部分是接收机的内容">
 <meta property="og:locale">
-<meta property="article:published_time" content="2024-10-13T12:03:39.000Z">
-<meta property="article:modified_time" content="2024-10-20T11:29:19.933Z">
+<meta property="og:image" content="d:\blog\Armke\source\_posts\%E6%94%B6%E5%8F%91%E6%9C%BA%E7%BB%93%E6%9E%84\image-20241026111642843.png">
+<meta property="article:published_time" content="2024-10-26T03:05:50.000Z">
+<meta property="article:modified_time" content="2024-10-26T03:22:22.266Z">
 <meta property="article:author" content="Armke">
-<meta property="article:tag" content="总结">
+<meta property="article:tag" content="射频微电子">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:\blog\Armke\source\_posts\%E6%94%B6%E5%8F%91%E6%9C%BA%E7%BB%93%E6%9E%84\image-20241026111642843.png">
 
-<link rel="canonical" href="https://armke.github.io/2024/10/13/3-7%E5%91%A8/">
+<link rel="canonical" href="https://armke.github.io/2024/10/26/%E6%94%B6%E5%8F%91%E6%9C%BA%E7%BB%93%E6%9E%84/">
 
 
 <script id="page-configurations">
@@ -46,7 +48,7 @@
   };
 </script>
 
-  <title>3-7周 | Armke的博客</title>
+  <title>收发机结构 | Armke的博客</title>
   
 
 
@@ -81,7 +83,119 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --></head>
+<!-- hexo injector head_end end --><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -171,7 +285,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://armke.github.io/2024/10/13/3-7%E5%91%A8/">
+    <link itemprop="mainEntityOfPage" href="https://armke.github.io/2024/10/26/%E6%94%B6%E5%8F%91%E6%9C%BA%E7%BB%93%E6%9E%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://bigshuimu.oss-cn-nanjing.aliyuncs.com/personal/armke_icon.jpg">
@@ -184,7 +298,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          3-7周
+          收发机结构
         </h1>
 
         <div class="post-meta">
@@ -193,23 +307,26 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2024-10-13 20:03:39" itemprop="dateCreated datePublished" datetime="2024-10-13T20:03:39+08:00">2024-10-13</time>
+              <time title="创建时间：2024-10-26 11:05:50 / 修改时间：11:22:22" itemprop="dateCreated datePublished" datetime="2024-10-26T11:05:50+08:00">2024-10-26</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-10-20 19:29:19" itemprop="dateModified" datetime="2024-10-20T19:29:19+08:00">2024-10-20</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
 
           
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>300</span>
+              <span>38</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -227,31 +344,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="3-7周"><a href="#3-7周" class="headerlink" title="3-7周"></a>3-7周</h1><span id="more"></span>
-<p>1从正式熟悉学校之后，就投入紧张的学习之中</p>
-<p>对我来说，能够给每周老师讲的知识点消化部分，时间就已经结束了</p>
-<p>但是，这是远远不够的</p>
-<p>我觉得，读研是一个蜕变的过程</p>
-<p>在学习上，本科做的不够好</p>
-<p>研究生应该更努力的将这些掌握</p>
-<p>所以时间管理是一个很重要的能力</p>
-<p>在这段时间，不断循环着上课-复习-上课-复习的过程</p>
-<p>如果说这已经占用了所有时间的话，那对我来说是没有提升的</p>
-<p>所以在接下来的时间，要更加合理规划一下</p>
-<hr>
-<p>下周目标：</p>
-<p>每天规划1-2小时给第二天的课程，或者复习之前的课程</p>
-<p>然后规划1-2小时的自由学习时间</p>
-<p>英语单词坚持背诵</p>
-<p>可以开6级真题了，没事可以整点听力</p>
-<p>RF书下周完成第三章</p>
-<hr>
-<p>学期目标</p>
-<p>顺利完成所有课的期末考试</p>
-<p>顺利通过英语6级</p>
-<p>看完RF书和一本PA的书</p>
-<p>学会使用Cadence和ADS</p>
-<p>学写论文</p>
+        <h1 id="收发机结构"><a href="#收发机结构" class="headerlink" title="收发机结构"></a>收发机结构</h1><p>主要部分是接收机的内容</p>
+<span id="more"></span>
+<p>发射机前端是由：功放，带通滤波器和天线构成</p>
+<p><img src="D:\blog\Armke\source\_posts\收发机结构\image-20241026111642843.png" alt="image-20241026111642843"></p>
 
     </div>
 
@@ -261,7 +357,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%80%BB%E7%BB%93/" rel="tag"># 总结</a>
+              <a href="/tags/%E5%B0%84%E9%A2%91%E5%BE%AE%E7%94%B5%E5%AD%90/" rel="tag"># 射频微电子</a>
           </div>
 
         
@@ -270,13 +366,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2024/10/13/%E8%A7%84%E5%88%92/" rel="prev" title="2024下规划">
-      <i class="fa fa-chevron-left"></i> 2024下规划
+    <a href="/2024/10/13/3-7%E5%91%A8/" rel="prev" title="3-7周">
+      <i class="fa fa-chevron-left"></i> 3-7周
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2024/10/26/%E6%94%B6%E5%8F%91%E6%9C%BA%E7%BB%93%E6%9E%84/" rel="next" title="收发机结构">
-      收发机结构 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -335,7 +428,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#3-7%E5%91%A8"><span class="nav-number">1.</span> <span class="nav-text">3-7周</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%94%B6%E5%8F%91%E6%9C%BA%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">收发机结构</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -475,6 +568,59 @@
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
