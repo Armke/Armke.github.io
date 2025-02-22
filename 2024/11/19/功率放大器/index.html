@@ -33,8 +33,10 @@
 <meta property="og:image" content="https://armke.github.io/2024/11/19/%E5%8A%9F%E7%8E%87%E6%94%BE%E5%A4%A7%E5%99%A8/image-20241119210217792.png">
 <meta property="og:image" content="https://armke.github.io/2024/11/19/%E5%8A%9F%E7%8E%87%E6%94%BE%E5%A4%A7%E5%99%A8/image-20241120202942788.png">
 <meta property="og:image" content="https://armke.github.io/2024/11/19/%E5%8A%9F%E7%8E%87%E6%94%BE%E5%A4%A7%E5%99%A8/image-20241120215237534.png">
+<meta property="og:image" content="https://armke.github.io/2024/11/19/%E5%8A%9F%E7%8E%87%E6%94%BE%E5%A4%A7%E5%99%A8/image-20241122202743245.png">
+<meta property="og:image" content="https://armke.github.io/2024/11/19/%E5%8A%9F%E7%8E%87%E6%94%BE%E5%A4%A7%E5%99%A8/image-20241122205822596.png">
 <meta property="article:published_time" content="2024-11-19T11:35:56.000Z">
-<meta property="article:modified_time" content="2024-11-20T13:57:47.731Z">
+<meta property="article:modified_time" content="2024-11-22T13:27:44.545Z">
 <meta property="article:author" content="Armke">
 <meta property="article:tag" content="射频微电子">
 <meta name="twitter:card" content="summary">
@@ -248,17 +250,17 @@ mjx-container[display="true"] + br {
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">10</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">11</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">2</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">18</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">19</span></a>
 
   </li>
   </ul>
@@ -320,7 +322,7 @@ mjx-container[display="true"] + br {
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-11-20 21:57:47" itemprop="dateModified" datetime="2024-11-20T21:57:47+08:00">2024-11-20</time>
+                <time title="修改时间：2024-11-22 21:27:44" itemprop="dateModified" datetime="2024-11-22T21:27:44+08:00">2024-11-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -337,13 +339,13 @@ mjx-container[display="true"] + br {
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>3.6k</span>
+              <span>5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>13 分钟</span>
+              <span>18 分钟</span>
             </span>
 
         </div>
@@ -562,7 +564,125 @@ g(V) = \frac{aV}{\left[1 + \left(\frac{V}{V_s}\right)^{2m}\right]^{1/(2m)}}</scr
 <li>准确描述静态非线性。</li>
 <li>应用于大多数集成功放设计中</li>
 </ul>
-<h2 id="单端和差分结构"><a href="#单端和差分结构" class="headerlink" title="单端和差分结构"></a>单端和差分结构</h2>
+<h2 id="单端和差分结构"><a href="#单端和差分结构" class="headerlink" title="单端和差分结构"></a>单端和差分结构</h2><h3 id="单端功放"><a href="#单端功放" class="headerlink" title="单端功放"></a>单端功放</h3><p>大多数独立的功放被设计成单端结构的级联，单端功放无需额外电路即可直接连接，简化系统设计。</p>
+<h3 id="单端功放的两个缺点"><a href="#单端功放的两个缺点" class="headerlink" title="单端功放的两个缺点"></a><strong>单端功放的两个缺点</strong></h3><p><strong>电压增益的浪费</strong>：</p>
+<p>单端功放仅利用了上变频器差分输出的一个分支，另一分支的信号被浪费。</p>
+<p>这种浪费使发射机的整体增益减少一半。</p>
+<img src="/2024/11/19/%E5%8A%9F%E7%8E%87%E6%94%BE%E5%A4%A7%E5%99%A8/image-20241122202743245.png" class="" title="image-20241122202743245">
+<p><strong>巴伦引入的损耗</strong>：</p>
+<p>为弥补单端功放增益不足，可以在上变频器和功放之间引入 <strong>巴伦 (Balun)</strong>，如图10.8b。</p>
+<p>将上变频器的差分输出转化为单端信号输入功放。</p>
+<p>问题：</p>
+<ul>
+<li>巴伦引入损耗，尤其是片上巴伦由于寄生效应损耗更严重。</li>
+<li>实际增益提升仅为 <strong>2–3 dB</strong>，无法达到理想的 <strong>6 dB</strong>。</li>
+</ul>
+<p><strong>局限性</strong>：</p>
+<ul>
+<li>损耗<ul>
+<li>片外巴伦：损耗较小，但体积大，不利于高集成度设计。</li>
+<li>片上巴伦：损耗显著，尤其在高频段受寄生效应影响更大。</li>
+</ul>
+</li>
+<li>增益有限<ul>
+<li>电压增益提升不明显，仅能部分缓解单端功放增益浪费的问题。</li>
+</ul>
+</li>
+</ul>
+<h4 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a><strong>优化方案</strong></h4><ul>
+<li>改用差分功放：避免使用巴伦，通过功放直接处理差分信号。</li>
+<li>优化巴伦设计：针对高频设计，提高巴伦的效率，尽量减小损耗。</li>
+<li>提高单端功放效率：从设计上优化功放的增益和匹配网络，弥补浪费。</li>
+</ul>
+<hr>
+<p>单端功放的第二个主要问题与瞬时电流和封装寄生效应有关：</p>
+<p>单端功放从电源抽取巨大的瞬时电流，可能导致寄生电感对电路性能的显著影响。</p>
+<p>如图10.9a所示：</p>
+<img src="/2024/11/19/%E5%8A%9F%E7%8E%87%E6%94%BE%E5%A4%A7%E5%99%A8/image-20241122205822596.png" class="" title="image-20241122205822596">
+<p>如果 Lm 的大小与功放输出网络的电感 L 可比，则可能改变输出网络的共振频率或阻抗变换特性。</p>
+<p>Lm 会使输出信号通过 VDD 线反馈到前级，导致频率响应出现纹波，甚至可能引起系统不稳定。</p>
+<p>Lg 会降低输出级性能，并引入额外的反馈，进一步恶化电路性能</p>
+<h3 id="差分功放的改进"><a href="#差分功放的改进" class="headerlink" title="差分功放的改进"></a>差分功放的改进</h3><p>相比单端功放，差分功放对封装寄生效应的敏感性显著降低：</p>
+<p><strong>瞬态电流的减小</strong>：</p>
+<ul>
+<li>差分功放对电源和地的瞬态电流需求较小。</li>
+<li>如图10.9b所示<ul>
+<li>电源线寄生电感 Lm 和接地线寄生电感 Lg 的影响被大幅削弱。</li>
+</ul>
+</li>
+</ul>
+<p><strong>反馈问题的缓解</strong>：</p>
+<ul>
+<li>差分架构的对称性使得来自电源和地的反馈噪声对信号的影响较小。</li>
+<li>因此，系统的频率响应更平滑，稳定性更高。</li>
+</ul>
+<p><strong>负反馈效应的利用</strong>：</p>
+<ul>
+<li>差分功放的结构中自然形成的负反馈可有效抑制因寄生效应引起的性能衰减。</li>
+</ul>
+<p>尽管差分功放在增益和封装寄生效应方面有显著优势，但大多数情况下功放仍需驱动单端天线。因此，需要引入 <strong>巴伦 (Balun)</strong> 来实现差分信号与单端信号的转换</p>
+<h4 id="优化建议"><a href="#优化建议" class="headerlink" title="优化建议"></a><strong>优化建议</strong></h4><ul>
+<li>差分功放的使用<ul>
+<li>在允许的情况下优先使用差分功放，尽量减少瞬时电流对电路性能的影响。</li>
+</ul>
+</li>
+<li>巴伦设计优化<ul>
+<li>选用低损耗、高效率的巴伦，避免因寄生效应影响功放性能。</li>
+</ul>
+</li>
+<li>封装设计优化<ul>
+<li>减小键合线电感的影响，通过改进封装技术降低 Lm 和 Lg 的值。</li>
+</ul>
+</li>
+</ul>
+<h3 id="差分功放的另一大优点"><a href="#差分功放的另一大优点" class="headerlink" title="差分功放的另一大优点"></a>差分功放的另一大优点</h3><p><strong>与本振的耦合更小，减小 LO Pulling（本振频率牵引）：</strong></p>
+<p>当功放输出信号通过耦合影响本振，可能导致本振频率偏离设计值。</p>
+<p>这种现象会严重影响发射机的频率稳定性和信号质量。</p>
+<p><strong>差分功放的优势</strong>：</p>
+<p>差分功放的对称性有助于抵消各级差分波形对本振的耦合：</p>
+<p>如果功放的各级差分波形对称传播，它们的耦合效应可以相互抵消，显著降低 LO Pulling 的风险。</p>
+<p>如果功放设计中包含对称电感，仍然可能出现耦合问题：</p>
+<p>对称电感的寄生效应可能引入额外的耦合路径，使 LO Pulling 无法完全避免。</p>
+<h3 id="单端功放与差分功放的取舍"><a href="#单端功放与差分功放的取舍" class="headerlink" title="单端功放与差分功放的取舍"></a>单端功放与差分功放的取舍</h3><p>功放设计中，选择单端还是差分结构涉及多种因素权衡，导致了不同的设计观点：</p>
+<ol>
+<li><strong>全差分电路的设计思路</strong>：<ul>
+<li>特点<ul>
+<li>从上变频器到功放全程使用差分信号处理。</li>
+<li>在输出匹配网络前插入巴伦以适配单端天线。</li>
+</ul>
+</li>
+<li>优点<ul>
+<li>减少 LO Pulling 问题。</li>
+<li>抑制寄生效应引起的噪声和干扰。</li>
+<li>提高频率稳定性和系统线性度。</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>引入巴伦会导致额外的功率损耗，尤其是片上巴伦的效率较低。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>单端功放的设计思路</strong>：<ul>
+<li>特点<ul>
+<li>上变频器后的信号直接采用单端方式传递。</li>
+<li>可选择在上变频器后插入巴伦以改善增益，也可省略巴伦以降低复杂性。</li>
+</ul>
+</li>
+<li>优点<ul>
+<li>设计和测试相对简单。</li>
+<li>不需要片上巴伦时，损耗更低，系统效率更高。</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>LO Pulling 问题更为严重。</li>
+<li>更容易受到封装寄生效应的影响，稳定性较差。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
     </div>
 
     
@@ -583,7 +703,10 @@ g(V) = \frac{aV}{\left[1 + \left(\frac{V}{V_s}\right)^{2m}\right]^{1/(2m)}}</scr
     <a href="/2024/11/19/%E6%B7%B7%E9%A2%91%E5%99%A8/" rel="prev" title="混频器">
       <i class="fa fa-chevron-left"></i> 混频器
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2025/02/22/%E6%84%9F%E6%82%9F/" rel="next" title="感悟">
+      感悟 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -642,7 +765,7 @@ g(V) = \frac{aV}{\left[1 + \left(\frac{V}{V_s}\right)^{2m}\right]^{1/(2m)}}</scr
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Power-Amplifly"><span class="nav-number">1.</span> <span class="nav-text">Power Amplifly</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">2.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%A9%B1%E5%8A%A850%CE%A9%E8%B4%9F%E8%BD%BD%E4%BC%A0%E9%80%921W%E5%8A%9F%E7%8E%87"><span class="nav-number">2.1.</span> <span class="nav-text">如何驱动50Ω负载传递1W功率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B1%E6%BA%90%E6%9E%81-%E5%85%B1%E5%B0%84%E6%9E%81%E7%9B%B4%E6%8E%A5%E9%A9%B1%E5%8A%A8%E8%B4%9F%E8%BD%BD"><span class="nav-number">2.2.</span> <span class="nav-text">共源极&#x2F;共射极直接驱动负载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8%E5%85%B1%E6%BA%90%E6%9E%81%EF%BC%88%E6%88%96%E5%85%B1%E5%B0%84%E6%9E%81%EF%BC%89%E7%BB%93%E6%9E%84%E9%A9%B1%E5%8A%A850%CE%A9%E8%B4%9F%E8%BD%BD%EF%BC%9A"><span class="nav-number">2.2.1.</span> <span class="nav-text">如果直接使用共源极（或共射极）结构驱动50Ω负载：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="nav-number">2.2.2.</span> <span class="nav-text">问题：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B5%E6%84%9F%E8%B4%9F%E8%BD%BD%E6%94%B9%E8%BF%9B%EF%BC%88%E5%9B%BE10-1c%EF%BC%89"><span class="nav-number">2.2.3.</span> <span class="nav-text">电感负载改进（图10.1c）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-number">2.2.4.</span> <span class="nav-text">总结：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%9F%E6%94%BE%E8%AE%BE%E8%AE%A1%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98%E2%80%94%E2%80%94%E8%BE%93%E5%87%BA%E5%8A%9F%E7%8E%87%E4%B8%8E%E7%94%B5%E5%8E%8B%E6%91%86%E5%B9%85%E7%9A%84%E6%8A%98%E4%B8%AD"><span class="nav-number">2.3.</span> <span class="nav-text">功放设计中的基本问题——输出功率与电压摆幅的折中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%84%E9%A2%91%E6%89%BC%E6%B5%81%E5%9C%88%EF%BC%88RF-Choke-RFC%EF%BC%89"><span class="nav-number">2.4.</span> <span class="nav-text">射频扼流圈（RF Choke, RFC）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">2.4.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%84%E9%A2%91%E6%89%BC%E6%B5%81%E5%9C%88%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-number">2.4.2.</span> <span class="nav-text">射频扼流圈的基本原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%B5%E6%84%9F%E7%9A%84%E9%A2%91%E7%8E%87%E7%89%B9%E6%80%A7"><span class="nav-number">2.4.2.1.</span> <span class="nav-text">电感的频率特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%B4%E6%B5%81%E4%BF%A1%E5%8F%B7%E5%92%8C%E4%BD%8E%E9%A2%91%E4%BF%A1%E5%8F%B7"><span class="nav-number">2.4.2.2.</span> <span class="nav-text">直流信号和低频信号</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%84%E9%A2%91%E6%89%BC%E6%B5%81%E5%9C%88%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">2.4.3.</span> <span class="nav-text">射频扼流圈的作用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9A%94%E7%A6%BB%E7%9B%B4%E6%B5%81%E4%B8%8E%E4%BA%A4%E6%B5%81%E4%BF%A1%E5%8F%B7"><span class="nav-number">2.4.3.1.</span> <span class="nav-text">隔离直流与交流信号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%98%BB%E6%96%AD%E9%AB%98%E9%A2%91%E5%B9%B2%E6%89%B0"><span class="nav-number">2.4.3.2.</span> <span class="nav-text">阻断高频干扰</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%BB%A4%E6%B3%A2%E4%BD%9C%E7%94%A8"><span class="nav-number">2.4.3.3.</span> <span class="nav-text">滤波作用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%84%E9%A2%91%E6%89%BC%E6%B5%81%E5%9C%88%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">2.4.4.</span> <span class="nav-text">射频扼流圈的使用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E6%94%BE%E8%AE%BE%E8%AE%A1%EF%BC%9A"><span class="nav-number">2.4.4.1.</span> <span class="nav-text">功放设计：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%A9%E7%BA%BF%E5%8C%B9%E9%85%8D%E7%BD%91%E7%BB%9C%EF%BC%9A"><span class="nav-number">2.4.4.2.</span> <span class="nav-text">天线匹配网络：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%84%E9%A2%91%E6%94%B6%E5%8F%91%E6%A8%A1%E5%9D%97%EF%BC%9A"><span class="nav-number">2.4.4.3.</span> <span class="nav-text">射频收发模块：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%90%86%E6%83%B3%E5%B0%84%E9%A2%91%E6%89%BC%E6%B5%81%E5%9C%88%E7%9A%84%E6%9D%A1%E4%BB%B6"><span class="nav-number">2.4.5.</span> <span class="nav-text">理想射频扼流圈的条件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%A7%E7%94%B5%E6%B5%81%E6%95%88%E5%BA%94"><span class="nav-number">2.5.</span> <span class="nav-text">大电流效应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%88%E7%8E%87"><span class="nav-number">2.6.</span> <span class="nav-text">效率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%BA%A6"><span class="nav-number">2.7.</span> <span class="nav-text">线性度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">2.7.1.</span> <span class="nav-text">非线性引起的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%91%E8%B0%B1%E5%86%8D%E7%94%9F%EF%BC%88Spectral-Regrowth%EF%BC%89%EF%BC%9A"><span class="nav-number">2.7.1.1.</span> <span class="nav-text">频谱再生（Spectral Regrowth）：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%AF%E5%B9%85%E5%8E%8B%E7%BC%A9%EF%BC%88Amplitude-Compression%EF%BC%89%EF%BC%9A"><span class="nav-number">2.7.1.2.</span> <span class="nav-text">振幅压缩（Amplitude Compression）：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AM-PM-%E5%8F%98%E6%8D%A2%EF%BC%9A"><span class="nav-number">2.7.1.3.</span> <span class="nav-text">AM&#x2F;PM 变换：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%9A%84%E8%A1%A8%E5%BE%81%E6%96%B9%E6%B3%95"><span class="nav-number">2.7.2.</span> <span class="nav-text">非线性的表征方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%A4%E8%B0%83%E6%B5%8B%E8%AF%95%EF%BC%88Intermodulation-Test%EF%BC%89"><span class="nav-number">2.7.2.1.</span> <span class="nav-text">交调测试（Intermodulation Test）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9%E6%B5%8B%E8%AF%95%EF%BC%88Compression-Test%EF%BC%89"><span class="nav-number">2.7.2.2.</span> <span class="nav-text">压缩测试（Compression Test）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%9F%E6%94%BE%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%BB%BA%E6%A8%A1%E5%8F%8A%E5%85%B6%E6%96%B9%E6%B3%95"><span class="nav-number">2.7.3.</span> <span class="nav-text">功放非线性建模及其方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.7.3.1.</span> <span class="nav-text">静态非线性模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%BD%A2%E5%BC%8F"><span class="nav-number">2.7.3.2.</span> <span class="nav-text">输入输出信号的形式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%86%E9%9D%99%E6%80%81%E8%BF%91%E4%BC%BC%E4%B8%8B%E7%9A%84%E8%A1%A8%E8%BE%BE"><span class="nav-number">2.7.3.3.</span> <span class="nav-text">准静态近似下的表达</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E7%BB%8F%E9%AA%8C%E5%85%AC%E5%BC%8F"><span class="nav-number">2.7.3.4.</span> <span class="nav-text">常见的经验公式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.7.3.5.</span> <span class="nav-text">常用非线性模型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E4%BB%8B%E7%BB%8D%E7%9A%84%E9%9D%99%E6%80%81%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.7.3.5.1.</span> <span class="nav-text">本文介绍的静态模型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Rapp-%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.7.3.5.2.</span> <span class="nav-text">Rapp 模型</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E7%AB%AF%E5%92%8C%E5%B7%AE%E5%88%86%E7%BB%93%E6%9E%84"><span class="nav-number">2.8.</span> <span class="nav-text">单端和差分结构</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Power-Amplifly"><span class="nav-number">1.</span> <span class="nav-text">Power Amplifly</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">2.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%A9%B1%E5%8A%A850%CE%A9%E8%B4%9F%E8%BD%BD%E4%BC%A0%E9%80%921W%E5%8A%9F%E7%8E%87"><span class="nav-number">2.1.</span> <span class="nav-text">如何驱动50Ω负载传递1W功率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B1%E6%BA%90%E6%9E%81-%E5%85%B1%E5%B0%84%E6%9E%81%E7%9B%B4%E6%8E%A5%E9%A9%B1%E5%8A%A8%E8%B4%9F%E8%BD%BD"><span class="nav-number">2.2.</span> <span class="nav-text">共源极&#x2F;共射极直接驱动负载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8%E5%85%B1%E6%BA%90%E6%9E%81%EF%BC%88%E6%88%96%E5%85%B1%E5%B0%84%E6%9E%81%EF%BC%89%E7%BB%93%E6%9E%84%E9%A9%B1%E5%8A%A850%CE%A9%E8%B4%9F%E8%BD%BD%EF%BC%9A"><span class="nav-number">2.2.1.</span> <span class="nav-text">如果直接使用共源极（或共射极）结构驱动50Ω负载：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="nav-number">2.2.2.</span> <span class="nav-text">问题：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B5%E6%84%9F%E8%B4%9F%E8%BD%BD%E6%94%B9%E8%BF%9B%EF%BC%88%E5%9B%BE10-1c%EF%BC%89"><span class="nav-number">2.2.3.</span> <span class="nav-text">电感负载改进（图10.1c）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-number">2.2.4.</span> <span class="nav-text">总结：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%9F%E6%94%BE%E8%AE%BE%E8%AE%A1%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98%E2%80%94%E2%80%94%E8%BE%93%E5%87%BA%E5%8A%9F%E7%8E%87%E4%B8%8E%E7%94%B5%E5%8E%8B%E6%91%86%E5%B9%85%E7%9A%84%E6%8A%98%E4%B8%AD"><span class="nav-number">2.3.</span> <span class="nav-text">功放设计中的基本问题——输出功率与电压摆幅的折中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%84%E9%A2%91%E6%89%BC%E6%B5%81%E5%9C%88%EF%BC%88RF-Choke-RFC%EF%BC%89"><span class="nav-number">2.4.</span> <span class="nav-text">射频扼流圈（RF Choke, RFC）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">2.4.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%84%E9%A2%91%E6%89%BC%E6%B5%81%E5%9C%88%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-number">2.4.2.</span> <span class="nav-text">射频扼流圈的基本原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%B5%E6%84%9F%E7%9A%84%E9%A2%91%E7%8E%87%E7%89%B9%E6%80%A7"><span class="nav-number">2.4.2.1.</span> <span class="nav-text">电感的频率特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%B4%E6%B5%81%E4%BF%A1%E5%8F%B7%E5%92%8C%E4%BD%8E%E9%A2%91%E4%BF%A1%E5%8F%B7"><span class="nav-number">2.4.2.2.</span> <span class="nav-text">直流信号和低频信号</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%84%E9%A2%91%E6%89%BC%E6%B5%81%E5%9C%88%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">2.4.3.</span> <span class="nav-text">射频扼流圈的作用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9A%94%E7%A6%BB%E7%9B%B4%E6%B5%81%E4%B8%8E%E4%BA%A4%E6%B5%81%E4%BF%A1%E5%8F%B7"><span class="nav-number">2.4.3.1.</span> <span class="nav-text">隔离直流与交流信号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%98%BB%E6%96%AD%E9%AB%98%E9%A2%91%E5%B9%B2%E6%89%B0"><span class="nav-number">2.4.3.2.</span> <span class="nav-text">阻断高频干扰</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%BB%A4%E6%B3%A2%E4%BD%9C%E7%94%A8"><span class="nav-number">2.4.3.3.</span> <span class="nav-text">滤波作用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%84%E9%A2%91%E6%89%BC%E6%B5%81%E5%9C%88%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">2.4.4.</span> <span class="nav-text">射频扼流圈的使用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E6%94%BE%E8%AE%BE%E8%AE%A1%EF%BC%9A"><span class="nav-number">2.4.4.1.</span> <span class="nav-text">功放设计：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%A9%E7%BA%BF%E5%8C%B9%E9%85%8D%E7%BD%91%E7%BB%9C%EF%BC%9A"><span class="nav-number">2.4.4.2.</span> <span class="nav-text">天线匹配网络：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%84%E9%A2%91%E6%94%B6%E5%8F%91%E6%A8%A1%E5%9D%97%EF%BC%9A"><span class="nav-number">2.4.4.3.</span> <span class="nav-text">射频收发模块：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%90%86%E6%83%B3%E5%B0%84%E9%A2%91%E6%89%BC%E6%B5%81%E5%9C%88%E7%9A%84%E6%9D%A1%E4%BB%B6"><span class="nav-number">2.4.5.</span> <span class="nav-text">理想射频扼流圈的条件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%A7%E7%94%B5%E6%B5%81%E6%95%88%E5%BA%94"><span class="nav-number">2.5.</span> <span class="nav-text">大电流效应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%88%E7%8E%87"><span class="nav-number">2.6.</span> <span class="nav-text">效率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%BA%A6"><span class="nav-number">2.7.</span> <span class="nav-text">线性度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">2.7.1.</span> <span class="nav-text">非线性引起的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%91%E8%B0%B1%E5%86%8D%E7%94%9F%EF%BC%88Spectral-Regrowth%EF%BC%89%EF%BC%9A"><span class="nav-number">2.7.1.1.</span> <span class="nav-text">频谱再生（Spectral Regrowth）：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%AF%E5%B9%85%E5%8E%8B%E7%BC%A9%EF%BC%88Amplitude-Compression%EF%BC%89%EF%BC%9A"><span class="nav-number">2.7.1.2.</span> <span class="nav-text">振幅压缩（Amplitude Compression）：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AM-PM-%E5%8F%98%E6%8D%A2%EF%BC%9A"><span class="nav-number">2.7.1.3.</span> <span class="nav-text">AM&#x2F;PM 变换：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%9A%84%E8%A1%A8%E5%BE%81%E6%96%B9%E6%B3%95"><span class="nav-number">2.7.2.</span> <span class="nav-text">非线性的表征方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%A4%E8%B0%83%E6%B5%8B%E8%AF%95%EF%BC%88Intermodulation-Test%EF%BC%89"><span class="nav-number">2.7.2.1.</span> <span class="nav-text">交调测试（Intermodulation Test）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9%E6%B5%8B%E8%AF%95%EF%BC%88Compression-Test%EF%BC%89"><span class="nav-number">2.7.2.2.</span> <span class="nav-text">压缩测试（Compression Test）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%9F%E6%94%BE%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%BB%BA%E6%A8%A1%E5%8F%8A%E5%85%B6%E6%96%B9%E6%B3%95"><span class="nav-number">2.7.3.</span> <span class="nav-text">功放非线性建模及其方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.7.3.1.</span> <span class="nav-text">静态非线性模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%BD%A2%E5%BC%8F"><span class="nav-number">2.7.3.2.</span> <span class="nav-text">输入输出信号的形式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%86%E9%9D%99%E6%80%81%E8%BF%91%E4%BC%BC%E4%B8%8B%E7%9A%84%E8%A1%A8%E8%BE%BE"><span class="nav-number">2.7.3.3.</span> <span class="nav-text">准静态近似下的表达</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E7%BB%8F%E9%AA%8C%E5%85%AC%E5%BC%8F"><span class="nav-number">2.7.3.4.</span> <span class="nav-text">常见的经验公式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.7.3.5.</span> <span class="nav-text">常用非线性模型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E4%BB%8B%E7%BB%8D%E7%9A%84%E9%9D%99%E6%80%81%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.7.3.5.1.</span> <span class="nav-text">本文介绍的静态模型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Rapp-%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.7.3.5.2.</span> <span class="nav-text">Rapp 模型</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E7%AB%AF%E5%92%8C%E5%B7%AE%E5%88%86%E7%BB%93%E6%9E%84"><span class="nav-number">2.8.</span> <span class="nav-text">单端和差分结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E7%AB%AF%E5%8A%9F%E6%94%BE"><span class="nav-number">2.8.1.</span> <span class="nav-text">单端功放</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E7%AB%AF%E5%8A%9F%E6%94%BE%E7%9A%84%E4%B8%A4%E4%B8%AA%E7%BC%BA%E7%82%B9"><span class="nav-number">2.8.2.</span> <span class="nav-text">单端功放的两个缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88"><span class="nav-number">2.8.2.1.</span> <span class="nav-text">优化方案</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%AE%E5%88%86%E5%8A%9F%E6%94%BE%E7%9A%84%E6%94%B9%E8%BF%9B"><span class="nav-number">2.8.3.</span> <span class="nav-text">差分功放的改进</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E5%BB%BA%E8%AE%AE"><span class="nav-number">2.8.3.1.</span> <span class="nav-text">优化建议</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%AE%E5%88%86%E5%8A%9F%E6%94%BE%E7%9A%84%E5%8F%A6%E4%B8%80%E5%A4%A7%E4%BC%98%E7%82%B9"><span class="nav-number">2.8.4.</span> <span class="nav-text">差分功放的另一大优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E7%AB%AF%E5%8A%9F%E6%94%BE%E4%B8%8E%E5%B7%AE%E5%88%86%E5%8A%9F%E6%94%BE%E7%9A%84%E5%8F%96%E8%88%8D"><span class="nav-number">2.8.5.</span> <span class="nav-text">单端功放与差分功放的取舍</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -658,20 +781,20 @@ g(V) = \frac{aV}{\left[1 + \left(\frac{V}{V_s}\right)^{2m}\right]^{1/(2m)}}</scr
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -713,7 +836,7 @@ g(V) = \frac{aV}{\left[1 + \left(\frac{V}{V_s}\right)^{2m}\right]^{1/(2m)}}</scr
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2024</span>
+  <span itemprop="copyrightYear">2025</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -722,12 +845,12 @@ g(V) = \frac{aV}{\left[1 + \left(\frac{V}{V_s}\right)^{2m}\right]^{1/(2m)}}</scr
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">37k</span>
+    <span title="站点总字数">39k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:15</span>
+    <span title="站点阅读时长">2:24</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
