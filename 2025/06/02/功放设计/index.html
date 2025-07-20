@@ -27,11 +27,15 @@
 <meta property="og:site_name" content="Armke的博客">
 <meta property="og:description" content="功放设计">
 <meta property="og:locale">
+<meta property="og:image" content="https://armke.github.io/2025/06/02/%E5%8A%9F%E6%94%BE%E8%AE%BE%E8%AE%A1/image-20250720215421048.png">
+<meta property="og:image" content="https://armke.github.io/2025/06/02/%E5%8A%9F%E6%94%BE%E8%AE%BE%E8%AE%A1/image-20250720235304373.png">
+<meta property="og:image" content="https://armke.github.io/2025/06/02/%E5%8A%9F%E6%94%BE%E8%AE%BE%E8%AE%A1/image-20250720235914537.png">
 <meta property="article:published_time" content="2025-06-02T10:38:11.000Z">
-<meta property="article:modified_time" content="2025-07-16T13:45:53.523Z">
+<meta property="article:modified_time" content="2025-07-20T15:59:48.168Z">
 <meta property="article:author" content="Armke">
 <meta property="article:tag" content="设计">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://armke.github.io/2025/06/02/%E5%8A%9F%E6%94%BE%E8%AE%BE%E8%AE%A1/image-20250720215421048.png">
 
 <link rel="canonical" href="https://armke.github.io/2025/06/02/%E5%8A%9F%E6%94%BE%E8%AE%BE%E8%AE%A1/">
 
@@ -313,7 +317,7 @@ mjx-container[display="true"] + br {
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-07-16 21:45:53" itemprop="dateModified" datetime="2025-07-16T21:45:53+08:00">2025-07-16</time>
+                <time title="修改时间：2025-07-20 23:59:48" itemprop="dateModified" datetime="2025-07-20T23:59:48+08:00">2025-07-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -330,13 +334,13 @@ mjx-container[display="true"] + br {
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>2.4k</span>
+              <span>3.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>9 分钟</span>
+              <span>14 分钟</span>
             </span>
 
         </div>
@@ -463,7 +467,7 @@ mjx-container[display="true"] + br {
 <p>然后通过smith圆图来看S11和S22对应于输入阻抗和输出阻抗的值</p>
 <p>当然，在标记好m1和m2之后，将频率f设为中心频率。</p>
 <p>然后去归一化，得到源阻抗</p>
-<h2 id="第二步，进行输入输出阻抗匹配"><a href="#第二步，进行输入输出阻抗匹配" class="headerlink" title="第二步，进行输入输出阻抗匹配"></a>第二步，进行输入输出阻抗匹配</h2><p>建立Match文件（in 和out）</p>
+<h2 id="第二步，进行输出阻抗匹配"><a href="#第二步，进行输出阻抗匹配" class="headerlink" title="第二步，进行输出阻抗匹配"></a>第二步，进行输出阻抗匹配</h2><p>建立Match文件（in 和out）</p>
 <p>先看out match</p>
 <p>也是新建s参数仿真模型，然后给Term1设置为S22去归一化的值，要将输出匹配到50欧姆，所以是将Term2设置为50</p>
 <p>加入Smith圆图</p>
@@ -488,7 +492,79 @@ mjx-container[display="true"] + br {
 <p>首先将频率改为中心频率，阻抗50，勾选归一化</p>
 <p>然后先串联一个电容（既作匹配又作隔直）</p>
 <p>做微带线匹配时，首先应该先考虑管子的大小，焊盘的大小。微带线不能比焊盘还小吧，这样焊接不上还容易失配。最近在设计16w功放的PCB的时候也是体会到了，根据厂家来的那些管子的填充不是随意的，是微带线！</p>
-<p>然后先串联一个微带线，再并联一个微带线</p>
+<p>然后先串联一个微带线，再并联一个微带线，再串一个即可</p>
+<p><strong>微带线阻抗越低，角度越小，在PCB上的宽度越宽</strong></p>
+<p>做好之后，保存导入。再进行仿真</p>
+<p>看S11和S12</p>
+<p>S11就是反射系数，要求小于-10dB，S12代表插损值，DS说要小于-20dB</p>
+<h3 id="不是到这里就结束了"><a href="#不是到这里就结束了" class="headerlink" title="不是到这里就结束了"></a>不是到这里就结束了</h3><p>这里微带线是理想的微带线，还要转化为实际微带线</p>
+<p><strong>电长度讲解</strong></p>
+<p>光速 / 频率=波长</p>
+<p>波长为1，对应360°电角度</p>
+<p>在库里面找到TLines，找到MSUB（第一个）控件，叫做微带线基板</p>
+<p>基板宽度H=0.76mm，介电常数（FR4）=3.66，铜厚Hu不管，板厚T=0.03mm，损耗角正切值TanD=0.0037，其他不设置</p>
+<p>然后用实际的微带线来代替，实际的微带线也在这里叫MLIN，注意电容按照原来的复制粘贴上去即可</p>
+<p>通过计算软件来实际计算每个微带线的宽度和电长度</p>
+<p>仿真得到与原仿真一致的曲线之后，需要将微带线连接进行优化。</p>
+<p>可以用三端口进行连接（MTEE）</p>
+<h3 id="注意，这里引入三端口连接的微带线，会导致我们S11的谐振频率向左偏移，正常现象"><a href="#注意，这里引入三端口连接的微带线，会导致我们S11的谐振频率向左偏移，正常现象" class="headerlink" title="注意，这里引入三端口连接的微带线，会导致我们S11的谐振频率向左偏移，正常现象"></a>注意，这里引入三端口连接的微带线，会导致我们S11的谐振频率向左偏移，正常现象</h3><p>需要修改其他位置</p>
+<p>思考一下，如果三端口左边是宽8.3mm，右边宽2.8mm，下面并联的宽2.3mm</p>
+<p>那我们从左边看过去，是不是相当于L增加了2.3mm</p>
+<p>所以我们减掉即可，将三个端口都减一点，偏到大于等于2.4G即可，因为后续还要再加偏置</p>
+<h3 id="这里我们需要加偏置"><a href="#这里我们需要加偏置" class="headerlink" title="这里我们需要加偏置"></a>这里我们需要加偏置</h3><p>在输入口Term1处加入四分之一波长微带线，这里阻值设置为50Ω，电角度为90，算出实际波长</p>
+<p>这里加入三分端口，宽度和左右相同（等于右边微带线宽度），而并联的那个口则是宽度选择为刚刚计算出来的宽度</p>
+<p>第三端口为刚刚的宽度，在第三端口再加入微带线TL7，宽度不变，长度看之间计算的长度，这里一般采用两节，所以看情况拆一下即可</p>
+<p>第一节加入之后，第二节加一个拐角（MSABND）,其W保持不变和TL7一致</p>
+<p>作用是：<strong>消除阻抗突变</strong></p>
+<img src="/2025/06/02/%E5%8A%9F%E6%94%BE%E8%AE%BE%E8%AE%A1/image-20250720215421048.png" class="" title="image-20250720215421048">
+<p>这里我们计算出来四分之一波长的长度之后，减去TL7，剩下的就是我们最后加的部分TL8，宽度不变</p>
+<p>最后加三个个电容，防止信号泄漏，大小100pf、1uf、10uf</p>
+<p>最后加入电压源Vcc（S2p参数可查，这边是28v）</p>
+<p>之后进行仿真，可能频率任然会偏，这里给中间三端口并联的微带线再调低一点</p>
+<h2 id="第四步，进行输入匹配"><a href="#第四步，进行输入匹配" class="headerlink" title="第四步，进行输入匹配"></a>第四步，进行输入匹配</h2><p>打开inmatch</p>
+<p>首先是建立S参数仿真，对于输入阻抗是1.13+j*4.28</p>
+<p>输入Term1给50Ω不变，输出给1.13+j*4.28</p>
+<p>插入史密斯圆图，设置参数</p>
+<p>先设置一下频率，再设置源阻抗类型</p>
+<p><strong>Term2设置为负阻抗，这里的ZL设置为其共轭阻抗1.13-j*4.28，设置为输出阻抗</strong></p>
+<p>注意，这里是匹配到50欧姆，同时呢还是要保证这个第一级微带线足够的宽</p>
+<p>所以先串联一个微带线，再通过串电容绕回来，微带线设置为10欧姆，改变电长度找等阻抗圆再转回来</p>
+<p>电容容值拉回到中心50欧姆</p>
+<p>一个电容电感即可</p>
+<p>之后添加Msub，从输出端copy即可，保证参数一致</p>
+<p>再加一个微带线和一个电容（实际微带线）</p>
+<p>计算得到电容为W=13.2，L为11.4</p>
+<h3 id="然后还是需要将输出端的偏置部分留出偏置区"><a href="#然后还是需要将输出端的偏置部分留出偏置区" class="headerlink" title="然后还是需要将输出端的偏置部分留出偏置区"></a>然后还是需要将输出端的偏置部分留出偏置区</h3><p>最简单的方法就是输出端的偏置直接复制过来</p>
+<p>也是接一个三端口Tee2，再接TL7，再接转角，再接TL8，再接三个电容，再接电源（这里是-2.9）。整体做一个Y轴镜像即可</p>
+<p>注意，此时三端口宽度改左端口即可</p>
+<p>仿真一下微调一下即可</p>
+<h2 id="第五步，将输入输出部分全部搬到第一个图里头"><a href="#第五步，将输入输出部分全部搬到第一个图里头" class="headerlink" title="第五步，将输入输出部分全部搬到第一个图里头"></a>第五步，将输入输出部分全部搬到第一个图里头</h2><p>进行整体验证，仿真</p>
+<p>看S21，也就是增益，在目标频率时是否符合我们的要求</p>
+<p>再看反射系数和驻波比</p>
+<p>若S22较差，微调一下。</p>
+<p>调整OUT部分，在4分之一波长微带线三端口之后的第二个三端口连接的部分</p>
+<p>TL4和TL5，接近电容的TL6不用管。</p>
+<p>点击仿真右边那个调写，弹出窗口不管，点击我们要调的TL4</p>
+<p>选择L，然后多点几个，给TL5,TL6都选上，然后打开仿真和微调窗口</p>
+<p>可以边调边看</p>
+<p>可以改step然后调好了点击更新即可</p>
+<h2 id="第六步，建立LayOut"><a href="#第六步，建立LayOut" class="headerlink" title="第六步，建立LayOut"></a>第六步，建立LayOut</h2><p>在输入电容前面再加一个微带线，输出端也加一个，因为是50Ω，所以不影响匹配，L改为5mm，仿真一下确认无问题</p>
+<p>复制所有东西，再新建一个文件夹LayOut</p>
+<p>建立PA_LayOut文件</p>
+<p>然后粘贴我们的文件</p>
+<p>这里我们的三极管是Sp文件，这里我们需要新建一个封装</p>
+<p>在这个文件夹，新建一个lib文件</p>
+<p>PA_Footprint</p>
+<p>对着手册来建立，首先画焊盘，切到cond（金属层）层</p>
+<img src="/2025/06/02/%E5%8A%9F%E6%94%BE%E8%AE%BE%E8%AE%A1/image-20250720235304373.png" class="" title="image-20250720235304373">
+<p>然后直接开画，dx=2.6，dy=5.5</p>
+<p>和AD自己画封转库即可</p>
+<p>两个焊盘画好了，切到Silk层，画丝印</p>
+<p>画到中间即可，切到cond层</p>
+<p>添加两个端口，在GND左边的那个</p>
+<p>要焊接到里面，所以pin要接到两个焊盘靠近丝印的部分</p>
+<img src="/2025/06/02/%E5%8A%9F%E6%94%BE%E8%AE%BE%E8%AE%A1/image-20250720235914537.png" class="" title="image-20250720235914537">
+<p>然后再加叠层，</p>
 
     </div>
 
@@ -569,7 +645,7 @@ mjx-container[display="true"] + br {
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8A%9F%E6%94%BE%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA"><span class="nav-number">1.</span> <span class="nav-text">功放基础理论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E6%8C%87%E6%A0%87"><span class="nav-number">1.1.</span> <span class="nav-text">设计指标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A2%9E%E7%9B%8A%EF%BC%9A"><span class="nav-number">1.1.1.</span> <span class="nav-text">增益：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E5%8A%9F%E7%8E%87"><span class="nav-number">1.1.2.</span> <span class="nav-text">输出功率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%9F%E7%8E%87%E6%95%88%E7%8E%87%E5%92%8C%E5%8A%9F%E7%8E%87%E9%99%84%E5%8A%A0%E6%95%88%E7%8E%87"><span class="nav-number">1.1.3.</span> <span class="nav-text">功率效率和功率附加效率</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E7%8E%87%E6%95%88%E7%8E%87%EF%BC%9A"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">功率效率：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E7%8E%87%E9%99%84%E5%8A%A0%E6%95%88%E7%8E%87%EF%BC%9A"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">功率附加效率：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%BA%A6"><span class="nav-number">1.1.4.</span> <span class="nav-text">线性度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1dB%E5%8E%8B%E7%BC%A9%E7%82%B9"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">1dB压缩点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E9%98%B6%E4%BA%A4%E8%B0%83%E7%82%B9"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">三阶交调点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%B4%E8%BF%91%E4%BF%A1%E9%81%93%E5%8A%9F%E7%8E%87%E6%AF%94"><span class="nav-number">1.1.5.</span> <span class="nav-text">临近信道功率比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="nav-number">1.1.6.</span> <span class="nav-text">稳定性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#S%E5%8F%82%E6%95%B0"><span class="nav-number">1.2.</span> <span class="nav-text">S参数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8C%B9%E9%85%8D%E6%8A%80%E6%9C%AF"><span class="nav-number">2.</span> <span class="nav-text">匹配技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8C%E5%85%83%E4%BB%B6%E5%8C%B9%E9%85%8D"><span class="nav-number">2.1.</span> <span class="nav-text">双元件匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#L%E5%9E%8B%E5%8C%B9%E9%85%8D"><span class="nav-number">2.1.1.</span> <span class="nav-text">L型匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E8%B4%9F%E8%BD%BD%E5%8C%B9%E9%85%8D%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.1.2.</span> <span class="nav-text">复负载匹配设计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B0%90%E6%8C%AF%E5%8C%B9%E9%85%8D%E6%B3%95"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">谐振匹配法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%B8%E6%94%B6%E5%8C%B9%E9%85%8D%E6%B3%95"><span class="nav-number">2.1.2.2.</span> <span class="nav-text">吸收匹配法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E5%85%83%E4%BB%B6%E5%8C%B9%E9%85%8D"><span class="nav-number">2.2.</span> <span class="nav-text">三元件匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Smith%E5%9C%86%E5%9B%BE%E5%8C%B9%E9%85%8D"><span class="nav-number">2.3.</span> <span class="nav-text">Smith圆图匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E5%BD%92%E4%B8%80%E5%8C%96"><span class="nav-number">2.3.1.</span> <span class="nav-text">参数归一化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E5%B0%84%E7%B3%BB%E6%95%B0%E4%BD%9C%E4%B8%BA%E5%9F%BA%E5%BA%95"><span class="nav-number">2.3.2.</span> <span class="nav-text">反射系数作为基底</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AA%84%E5%B8%A6%E5%8C%B9%E9%85%8D"><span class="nav-number">2.3.3.</span> <span class="nav-text">窄带匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%CF%80%E5%9E%8B%E5%8C%B9%E9%85%8D"><span class="nav-number">2.3.4.</span> <span class="nav-text">π型匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T%E5%9E%8B%E5%8C%B9%E9%85%8D"><span class="nav-number">2.3.5.</span> <span class="nav-text">T型匹配</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%BD%E5%B8%A6%E5%8C%B9%E9%85%8D%E6%80%9D%E6%83%B3"><span class="nav-number">2.4.</span> <span class="nav-text">宽带匹配思想</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%90%E6%8C%AF%E5%AE%BD%E5%B8%A6%E5%8C%B9%E9%85%8D"><span class="nav-number">2.4.1.</span> <span class="nav-text">谐振宽带匹配</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Snp%E6%A8%A1%E5%9E%8B%E4%B8%8E%E8%AE%BE%E8%AE%A1"><span class="nav-number">3.</span> <span class="nav-text">Snp模型与设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Snp%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.1.</span> <span class="nav-text">Snp模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SnP%E6%A0%BC%E5%BC%8F"><span class="nav-number">3.2.</span> <span class="nav-text">SnP格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8B%A5%E6%97%A0-%E5%BC%80%E5%A7%8B%E6%A0%87%E5%BF%97%EF%BC%8C%E5%88%99%E9%87%87%E7%94%A8%E9%BB%98%E8%AE%A4%EF%BC%8C%EF%BC%81%E8%A1%A8%E7%A4%BAS2P%E7%9A%84%E6%B3%A8%E9%87%8A"><span class="nav-number">3.2.1.</span> <span class="nav-text">若无#开始标志，则采用默认，！表示S2P的注释</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8ES2P%E6%96%87%E4%BB%B6%EF%BC%8C%E5%AE%9E%E7%8E%B050W%E5%8A%9F%E7%8E%87%E6%94%BE%E5%A4%A7%E5%99%A8"><span class="nav-number">4.</span> <span class="nav-text">基于S2P文件，实现50W功率放大器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%8C%E5%85%88%E5%BB%BA%E7%AB%8BFET-Stable%E6%B5%8B%E8%AF%95S%E5%8F%82%E6%95%B0"><span class="nav-number">4.1.</span> <span class="nav-text">第一步，先建立FET_Stable测试S参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%8C%E8%BF%9B%E8%A1%8C%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E9%98%BB%E6%8A%97%E5%8C%B9%E9%85%8D"><span class="nav-number">4.2.</span> <span class="nav-text">第二步，进行输入输出阻抗匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F"><span class="nav-number">4.2.1.</span> <span class="nav-text">注意</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%8C%E8%BF%9B%E8%A1%8CSmithChat%E5%8C%B9%E9%85%8D"><span class="nav-number">4.3.</span> <span class="nav-text">第三步，进行SmithChat匹配</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8A%9F%E6%94%BE%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA"><span class="nav-number">1.</span> <span class="nav-text">功放基础理论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E6%8C%87%E6%A0%87"><span class="nav-number">1.1.</span> <span class="nav-text">设计指标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A2%9E%E7%9B%8A%EF%BC%9A"><span class="nav-number">1.1.1.</span> <span class="nav-text">增益：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E5%8A%9F%E7%8E%87"><span class="nav-number">1.1.2.</span> <span class="nav-text">输出功率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%9F%E7%8E%87%E6%95%88%E7%8E%87%E5%92%8C%E5%8A%9F%E7%8E%87%E9%99%84%E5%8A%A0%E6%95%88%E7%8E%87"><span class="nav-number">1.1.3.</span> <span class="nav-text">功率效率和功率附加效率</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E7%8E%87%E6%95%88%E7%8E%87%EF%BC%9A"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">功率效率：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E7%8E%87%E9%99%84%E5%8A%A0%E6%95%88%E7%8E%87%EF%BC%9A"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">功率附加效率：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%BA%A6"><span class="nav-number">1.1.4.</span> <span class="nav-text">线性度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1dB%E5%8E%8B%E7%BC%A9%E7%82%B9"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">1dB压缩点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E9%98%B6%E4%BA%A4%E8%B0%83%E7%82%B9"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">三阶交调点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%B4%E8%BF%91%E4%BF%A1%E9%81%93%E5%8A%9F%E7%8E%87%E6%AF%94"><span class="nav-number">1.1.5.</span> <span class="nav-text">临近信道功率比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="nav-number">1.1.6.</span> <span class="nav-text">稳定性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#S%E5%8F%82%E6%95%B0"><span class="nav-number">1.2.</span> <span class="nav-text">S参数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8C%B9%E9%85%8D%E6%8A%80%E6%9C%AF"><span class="nav-number">2.</span> <span class="nav-text">匹配技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8C%E5%85%83%E4%BB%B6%E5%8C%B9%E9%85%8D"><span class="nav-number">2.1.</span> <span class="nav-text">双元件匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#L%E5%9E%8B%E5%8C%B9%E9%85%8D"><span class="nav-number">2.1.1.</span> <span class="nav-text">L型匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E8%B4%9F%E8%BD%BD%E5%8C%B9%E9%85%8D%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.1.2.</span> <span class="nav-text">复负载匹配设计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B0%90%E6%8C%AF%E5%8C%B9%E9%85%8D%E6%B3%95"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">谐振匹配法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%B8%E6%94%B6%E5%8C%B9%E9%85%8D%E6%B3%95"><span class="nav-number">2.1.2.2.</span> <span class="nav-text">吸收匹配法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E5%85%83%E4%BB%B6%E5%8C%B9%E9%85%8D"><span class="nav-number">2.2.</span> <span class="nav-text">三元件匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Smith%E5%9C%86%E5%9B%BE%E5%8C%B9%E9%85%8D"><span class="nav-number">2.3.</span> <span class="nav-text">Smith圆图匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E5%BD%92%E4%B8%80%E5%8C%96"><span class="nav-number">2.3.1.</span> <span class="nav-text">参数归一化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E5%B0%84%E7%B3%BB%E6%95%B0%E4%BD%9C%E4%B8%BA%E5%9F%BA%E5%BA%95"><span class="nav-number">2.3.2.</span> <span class="nav-text">反射系数作为基底</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AA%84%E5%B8%A6%E5%8C%B9%E9%85%8D"><span class="nav-number">2.3.3.</span> <span class="nav-text">窄带匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%CF%80%E5%9E%8B%E5%8C%B9%E9%85%8D"><span class="nav-number">2.3.4.</span> <span class="nav-text">π型匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T%E5%9E%8B%E5%8C%B9%E9%85%8D"><span class="nav-number">2.3.5.</span> <span class="nav-text">T型匹配</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%BD%E5%B8%A6%E5%8C%B9%E9%85%8D%E6%80%9D%E6%83%B3"><span class="nav-number">2.4.</span> <span class="nav-text">宽带匹配思想</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%90%E6%8C%AF%E5%AE%BD%E5%B8%A6%E5%8C%B9%E9%85%8D"><span class="nav-number">2.4.1.</span> <span class="nav-text">谐振宽带匹配</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Snp%E6%A8%A1%E5%9E%8B%E4%B8%8E%E8%AE%BE%E8%AE%A1"><span class="nav-number">3.</span> <span class="nav-text">Snp模型与设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Snp%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.1.</span> <span class="nav-text">Snp模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SnP%E6%A0%BC%E5%BC%8F"><span class="nav-number">3.2.</span> <span class="nav-text">SnP格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8B%A5%E6%97%A0-%E5%BC%80%E5%A7%8B%E6%A0%87%E5%BF%97%EF%BC%8C%E5%88%99%E9%87%87%E7%94%A8%E9%BB%98%E8%AE%A4%EF%BC%8C%EF%BC%81%E8%A1%A8%E7%A4%BAS2P%E7%9A%84%E6%B3%A8%E9%87%8A"><span class="nav-number">3.2.1.</span> <span class="nav-text">若无#开始标志，则采用默认，！表示S2P的注释</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8ES2P%E6%96%87%E4%BB%B6%EF%BC%8C%E5%AE%9E%E7%8E%B050W%E5%8A%9F%E7%8E%87%E6%94%BE%E5%A4%A7%E5%99%A8"><span class="nav-number">4.</span> <span class="nav-text">基于S2P文件，实现50W功率放大器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%8C%E5%85%88%E5%BB%BA%E7%AB%8BFET-Stable%E6%B5%8B%E8%AF%95S%E5%8F%82%E6%95%B0"><span class="nav-number">4.1.</span> <span class="nav-text">第一步，先建立FET_Stable测试S参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%8C%E8%BF%9B%E8%A1%8C%E8%BE%93%E5%87%BA%E9%98%BB%E6%8A%97%E5%8C%B9%E9%85%8D"><span class="nav-number">4.2.</span> <span class="nav-text">第二步，进行输出阻抗匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F"><span class="nav-number">4.2.1.</span> <span class="nav-text">注意</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%8C%E8%BF%9B%E8%A1%8CSmithChat%E5%8C%B9%E9%85%8D"><span class="nav-number">4.3.</span> <span class="nav-text">第三步，进行SmithChat匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E6%98%AF%E5%88%B0%E8%BF%99%E9%87%8C%E5%B0%B1%E7%BB%93%E6%9D%9F%E4%BA%86"><span class="nav-number">4.3.1.</span> <span class="nav-text">不是到这里就结束了</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%EF%BC%8C%E8%BF%99%E9%87%8C%E5%BC%95%E5%85%A5%E4%B8%89%E7%AB%AF%E5%8F%A3%E8%BF%9E%E6%8E%A5%E7%9A%84%E5%BE%AE%E5%B8%A6%E7%BA%BF%EF%BC%8C%E4%BC%9A%E5%AF%BC%E8%87%B4%E6%88%91%E4%BB%ACS11%E7%9A%84%E8%B0%90%E6%8C%AF%E9%A2%91%E7%8E%87%E5%90%91%E5%B7%A6%E5%81%8F%E7%A7%BB%EF%BC%8C%E6%AD%A3%E5%B8%B8%E7%8E%B0%E8%B1%A1"><span class="nav-number">4.3.2.</span> <span class="nav-text">注意，这里引入三端口连接的微带线，会导致我们S11的谐振频率向左偏移，正常现象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%99%E9%87%8C%E6%88%91%E4%BB%AC%E9%9C%80%E8%A6%81%E5%8A%A0%E5%81%8F%E7%BD%AE"><span class="nav-number">4.3.3.</span> <span class="nav-text">这里我们需要加偏置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%EF%BC%8C%E8%BF%9B%E8%A1%8C%E8%BE%93%E5%85%A5%E5%8C%B9%E9%85%8D"><span class="nav-number">4.4.</span> <span class="nav-text">第四步，进行输入匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%84%B6%E5%90%8E%E8%BF%98%E6%98%AF%E9%9C%80%E8%A6%81%E5%B0%86%E8%BE%93%E5%87%BA%E7%AB%AF%E7%9A%84%E5%81%8F%E7%BD%AE%E9%83%A8%E5%88%86%E7%95%99%E5%87%BA%E5%81%8F%E7%BD%AE%E5%8C%BA"><span class="nav-number">4.4.1.</span> <span class="nav-text">然后还是需要将输出端的偏置部分留出偏置区</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94%E6%AD%A5%EF%BC%8C%E5%B0%86%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E9%83%A8%E5%88%86%E5%85%A8%E9%83%A8%E6%90%AC%E5%88%B0%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%9B%BE%E9%87%8C%E5%A4%B4"><span class="nav-number">4.5.</span> <span class="nav-text">第五步，将输入输出部分全部搬到第一个图里头</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%85%AD%E6%AD%A5%EF%BC%8C%E5%BB%BA%E7%AB%8BLayOut"><span class="nav-number">4.6.</span> <span class="nav-text">第六步，建立LayOut</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -649,12 +725,12 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">51k</span>
+    <span title="站点总字数">52k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:05</span>
+    <span title="站点阅读时长">3:10</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
